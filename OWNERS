@@ -1,0 +1,17 @@
+approvers:
+  - saschagrunert
+  - jhrozek
+  - sheriff-rh
+  - Vincent056
+  - xiaojiey
+  - Wiharris
+
+reviewers:
+  - saschagrunert
+  - jhrozek
+  - sheriff-rh
+  - Vincent056
+  - xiaojiey
+  - Wiharris
+
+component: "Security Profiles Operator"
