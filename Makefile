@@ -11,7 +11,7 @@ GO_PROJECT := github.com/containers/$(PROJECT)
 
 # External Helper variables
 
-GOLANGCI_LINT_VERSION=1.33.0
+GOLANGCI_LINT_VERSION=1.50.1
 GOLANGCI_LINT_OS=linux
 ifeq ($(OS_NAME), Darwin)
     GOLANGCI_LINT_OS=darwin
@@ -26,6 +26,9 @@ IMAGE_TAG=latest
 IMAGE_REF=$(IMAGE_NAME):$(IMAGE_TAG)
 
 IMAGE_REPO?=quay.io/security-profiles-operator/$(IMAGE_REF)
+EL8_IMAGE_REPO?=quay.io/security-profiles-operator/$(IMAGE_NAME)-el8:$(IMAGE_TAG)
+EL9_IMAGE_REPO?=quay.io/security-profiles-operator/$(IMAGE_NAME)-el9:$(IMAGE_TAG)
+# Tag centos the same as EL8 for now, remove after some SPO releases pass
 CENTOS_IMAGE_REPO?=quay.io/security-profiles-operator/$(IMAGE_NAME)-centos:$(IMAGE_TAG)
 FEDORA_IMAGE_REPO?=quay.io/security-profiles-operator/$(IMAGE_NAME)-fedora:$(IMAGE_TAG)
 
@@ -119,15 +122,25 @@ image: default-image centos-image fedora-image
 
 .PHONY: default-image
 default-image:
-	$(CONTAINER_RUNTIME) build -f images/Dockerfile.centos -t $(IMAGE_REPO) .
+	$(MAKE) el8-image
 
+# backwards compatibility
 .PHONY: centos-image
 centos-image:
-	$(CONTAINER_RUNTIME) build -f images/Dockerfile.centos -t $(CENTOS_IMAGE_REPO) .
+	$(MAKE) el8-image
+	$(CONTAINER_RUNTIME) tag $(EL8_IMAGE_REPO) $(CENTOS_IMAGE_REPO)
+
+.PHONY: el8-image
+el8-image:
+	$(CONTAINER_RUNTIME) build -f images/el8/Dockerfile -t $(EL8_IMAGE_REPO) .
+
+.PHONY: el9-image
+el9-image:
+	$(CONTAINER_RUNTIME) build -f images/el9/Dockerfile -t $(EL9_IMAGE_REPO) .
 
 .PHONY: fedora-image
 fedora-image:
-	$(CONTAINER_RUNTIME) build -f images/Dockerfile.fedora -t $(FEDORA_IMAGE_REPO) .
+	$(CONTAINER_RUNTIME) build -f images/fedora/Dockerfile -t $(FEDORA_IMAGE_REPO) .
 
 .PHONY: push
 push:

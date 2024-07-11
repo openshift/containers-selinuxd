@@ -4,7 +4,6 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
 	"net"
 	"net/http"
 	"os"
@@ -14,11 +13,10 @@ import (
 	"time"
 
 	backoff "github.com/cenkalti/backoff/v4"
-	"github.com/go-logr/zapr"
-	"go.uber.org/zap"
-
 	"github.com/containers/selinuxd/pkg/datastore"
 	"github.com/containers/selinuxd/pkg/semodule/test"
+	"github.com/go-logr/zapr"
+	"go.uber.org/zap"
 )
 
 const (
@@ -40,7 +38,7 @@ func getPolicyPath(module, path string) string {
 func installPolicy(module, path string, t *testing.T) {
 	modPath := getPolicyPath(module, path)
 	message := []byte("Hello, Gophers!")
-	err := ioutil.WriteFile(modPath, message, 0600)
+	err := os.WriteFile(modPath, message, 0o600)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -59,6 +57,7 @@ func getHTTPClient(sockpath string) *http.Client {
 	return &http.Client{
 		Transport: &http.Transport{
 			DialContext: func(_ context.Context, _, _ string) (net.Conn, error) {
+				//nolint: wrapcheck // let's not complicate the test
 				return net.Dial("unix", sockpath)
 			},
 		},
@@ -73,7 +72,7 @@ func getReadyRequest(ctx context.Context, t *testing.T) *http.Request {
 	return req
 }
 
-// nolint:gocognit,gocyclo
+//nolint:gocognit,gocyclo
 func TestDaemon(t *testing.T) {
 	done := make(chan bool)
 	logger, err := zap.NewDevelopment()
@@ -81,13 +80,15 @@ func TestDaemon(t *testing.T) {
 		t.Fatalf("Couldn't initialize logger: %s", err)
 	}
 
-	moddir, err := ioutil.TempDir("", "semodtest")
+	moddir := filepath.Join(os.TempDir(), "semodtest")
+	err = os.Mkdir(moddir, 0o755)
 	if err != nil {
 		t.Fatalf("Error creating temporary directory: %s", err)
 	}
 	defer os.RemoveAll(moddir) // clean up
 
-	dir, err := ioutil.TempDir("", "selinuxd")
+	dir := filepath.Join(os.TempDir(), "selinuxd")
+	err = os.Mkdir(dir, 0o755)
 	if err != nil {
 		t.Fatalf("Error creating temporary directory: %s", err)
 	}
@@ -294,7 +295,7 @@ func TestDaemon(t *testing.T) {
 		}
 
 		perms := fi.Mode().Perm()
-		if perms != 0660 {
+		if perms != 0o660 {
 			t.Fatalf("wrong perms, got %#o expected 0660", perms)
 		}
 
@@ -315,7 +316,7 @@ func TestDaemon(t *testing.T) {
 	subdirPolicy := "subdirpolicy"
 
 	t.Run("Module should track a policy in sub-directory", func(t *testing.T) {
-		if err := os.Mkdir(subdirPath, 0700); err != nil {
+		if err := os.Mkdir(subdirPath, 0o700); err != nil {
 			t.Fatalf("Unable to create sub-directory: %s", err)
 		}
 		installPolicy(subdirPolicy, subdirPath, t)
@@ -355,13 +356,15 @@ func TestDaemonWithSubdir(t *testing.T) {
 		t.Fatalf("Couldn't initialize logger: %s", err)
 	}
 
-	moddir, err := ioutil.TempDir("", "semodtest")
+	moddir := filepath.Join(os.TempDir(), "semodtest")
+	err = os.Mkdir(moddir, 0o755)
 	if err != nil {
 		t.Fatalf("Error creating temporary directory: %s", err)
 	}
 	defer os.RemoveAll(moddir) // clean up
 
-	dir, err := ioutil.TempDir("", "selinuxd")
+	dir := filepath.Join(os.TempDir(), "selinuxd")
+	err = os.Mkdir(dir, 0o755)
 	if err != nil {
 		t.Fatalf("Error creating temporary directory: %s", err)
 	}
@@ -390,7 +393,7 @@ func TestDaemonWithSubdir(t *testing.T) {
 	subdirPolicy := "subdirpolicy"
 
 	t.Run("Install policy before daemon runs", func(t *testing.T) {
-		if err := os.Mkdir(subdirPath, 0700); err != nil {
+		if err := os.Mkdir(subdirPath, 0o700); err != nil {
 			t.Fatalf("Unable to create sub-directory: %s", err)
 		}
 		installPolicy(subdirPolicy, subdirPath, t)
