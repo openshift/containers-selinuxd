@@ -2,6 +2,8 @@ approvers:
   - saschagrunert
   - sheriff-rh
   - Vincent056
+  - yuumasato
+  - rhmdnd
   - xiaojiey
   - BhargaviGudi
 
@@ -9,6 +11,8 @@ reviewers:
   - saschagrunert
   - jhrozek
   - sheriff-rh
+  - yuumasato
+  - rhmdnd
   - Vincent056
   - xiaojiey
   - BhargaviGudi
