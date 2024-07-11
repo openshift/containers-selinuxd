@@ -1,10 +1,9 @@
 approvers:
   - saschagrunert
-  - jhrozek
   - sheriff-rh
   - Vincent056
   - xiaojiey
-  - Wiharris
+  - BhargaviGudi
 
 reviewers:
   - saschagrunert
@@ -12,6 +11,6 @@ reviewers:
   - sheriff-rh
   - Vincent056
   - xiaojiey
-  - Wiharris
+  - BhargaviGudi
 
 component: "Security Profiles Operator"
