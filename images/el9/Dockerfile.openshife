@@ -1,0 +1,50 @@
+FROM brew.registry.redhat.io/rh-osbs/openshift-golang-builder:v1.21 as builder
+
+WORKDIR /go/src/github.com/openshift/selinuxd
+
+ENV GOFLAGS="-mod=vendor" BUILD_FLAGS="-tags strictfipsruntime"
+
+COPY . /go/src/github.com/openshift/selinuxd
+
+RUN export SMDEV_CONTAINER_OFF=1 && \
+    subscription-manager register --org $(cat "/activation-key/org") --activationkey $(cat "/activation-key/activationkey") && \
+    # use --allowerasing to avoid conflicts with the base image for mingw packages
+    # Problem 1: cannot install both mingw-binutils-generic-2.41-3.el9.x86_64 and mingw-binutils-generic-2.39-2.el9.x86_64
+    # Problem 2: package mingw64-filesystem-139-1.el9.noarch requires mingw-filesystem-base = 139-1.el9, but none of the providers can be installed
+    yum -y update --allowerasing && \
+    yum -y install container-selinux git && yum clean all && \
+    yum -y clean all && rm -rf /var/cache/yum  && \
+    subscription-manager unregister
+
+
+RUN SEMODULE_BACKEND=policycoreutils make
+
+FROM registry.redhat.io/ubi9/ubi-minimal:latest
+
+USER root
+
+RUN INSTALL_PKGS="policycoreutils" && \
+    if [ ! -e /usr/bin/dnf ]; then ln -s /usr/bin/microdnf /usr/bin/dnf; fi && \
+        dnf install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
+        dnf clean all && rm -rf /var/cache/* && \
+        # trigger to run pipeline for this image
+        rm -rf /var/cache/*
+
+LABEL \
+        io.k8s.display-name="selinux deamon for the Security Profiles Operator" \
+        io.k8s.description="An operand for the Security Profiles Operator" \
+        io.openshift.tags="selinux,security,deamon" \
+        com.redhat.delivery.appregistry="false" \
+        maintainer="Red Hat ISC <isc-team@redhat.com>" \
+        License="APL 2.0" \
+        name="openshift-selinuxd" \
+        com.redhat.component="openshift-selinuxd-rhel9-container" \
+        io.openshift.maintainer.product="OpenShift Container Platform" \
+        io.openshift.maintainer.component="Security Profiles Operator" \
+        version=0.8.4
+
+RUN mkdir -p /usr/share/selinuxd/templates
+COPY --from=builder /usr/share/udica/templates/* /usr/share/selinuxd/templates/
+COPY --from=builder /go/src/github.com/openshift/security-profiles-operator/bin/selinuxdctl /usr/bin/
+
+ENTRYPOINT ["/usr/bin/selinuxdctl"]
