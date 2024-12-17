@@ -1,5 +1,5 @@
 #@follow_tag(registry-proxy.engineering.redhat.com/rh-osbs/openshift-golang-builder:rhel_9_golang_1.21)
-FROM brew.registry.redhat.io/rh-osbs/openshift-golang-builder:v1.21 as builder
+FROM registry.access.redhat.com/ubi8/ubi-minimal:latest as builder
 
 WORKDIR /go/src/github.com/openshift/selinuxd
 
@@ -7,9 +7,12 @@ ENV GOFLAGS="-mod=vendor" BUILD_FLAGS="-tags strictfipsruntime"
 
 COPY . .
 
-RUN yum -y update --allowerasing && \
-    yum -y install container-selinux git && yum clean all && \
-    yum -y clean all && rm -rf /var/cache/yum
+RUN microdnf install -y \
+    container-selinux \
+    go-toolset \
+    make \
+    findutils \
+    git-core && microdnf clean all
 
 
 RUN SEMODULE_BACKEND=policycoreutils make
@@ -20,7 +23,6 @@ USER root
 
 RUN INSTALL_PKGS="policycoreutils" && \
     if [ ! -e /usr/bin/dnf ]; then ln -s /usr/bin/microdnf /usr/bin/dnf; fi && \
-        dnf update -y && \
         dnf install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
         dnf clean all && rm -rf /var/cache/* && \
         # trigger to run pipeline for this image
