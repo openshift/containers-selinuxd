@@ -1,5 +1,5 @@
 #@follow_tag(registry-proxy.engineering.redhat.com/rh-osbs/openshift-golang-builder:rhel_9_golang_1.21)
-FROM registry.access.redhat.com/ubi8/ubi-minimal:latest as builder
+FROM registry.redhat.io/ubi8/ubi-minimal:latest as builder
 
 WORKDIR /go/src/github.com/openshift/selinuxd
 
