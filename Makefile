@@ -39,7 +39,7 @@ BUILD_DATE ?= $(shell date -u "$(DATE_FMT)")
 
 # By default the version is the latest tag in the current branch,
 # if there is none, then the commit hash
-VERSION := $(shell git describe --tag)
+VERSION := $(shell git describe --tag --always)
 ifeq ($(VERSION),)
 	VERSION := $(shell git rev-parse --short --verify HEAD)
 endif
