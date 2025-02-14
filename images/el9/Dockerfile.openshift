@@ -21,7 +21,6 @@ RUN INSTALL_PKGS="policycoreutils" && \
         dnf update -y && \
         dnf install -y --setopt=tsflags=nodocs $INSTALL_PKGS && \
         dnf clean all && rm -rf /var/cache/* && \
-        # trigger to run pipeline for this image
         rm -rf /var/cache/*
 
 LABEL \
