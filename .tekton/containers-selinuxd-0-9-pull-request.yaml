@@ -27,11 +27,12 @@ spec:
     value: quay.io/redhat-user-workloads/ocp-isc-tenant/containers-selinuxd:on-pr-{{revision}}
   - name: image-expires-after
     value: 5d
-  - name: build-platforms
-    value:
-    - linux/x86_64
   - name: dockerfile
     value: images/el8/Dockerfile.openshift
+  - name: hermetic
+    value: "true"
+  - name: prefetch-input
+    value: '[{"type": "rpm", "path": "konflux/el8"}, {"type": "gomod", "path": "."}]'
   pipelineSpec:
     description: |
       This pipeline is ideal for building multi-arch container images from a Containerfile while maintaining trust after pipeline customization.
@@ -116,6 +117,7 @@ spec:
       type: string
     - default:
       - linux/x86_64
+      - linux/ppc64le
       description: List of platforms to build the container images on. The available
         set of values is determined by the configuration of the multi-platform-controller.
       name: build-platforms
@@ -190,6 +192,8 @@ spec:
         value: $(params.output-image).prefetch
       - name: ociArtifactExpiresAfter
         value: $(params.image-expires-after)
+      - name: dev-package-managers
+        value: "true"
       runAfter:
       - clone-repository
       taskRef:
@@ -609,7 +613,7 @@ spec:
     - name: netrc
       optional: true
   taskRunTemplate:
-    serviceAccountName: build-pipeline-containers-selinuxd-0-9
+    serviceAccountName: build-pipeline-containers-selinuxd
   workspaces:
   - name: git-auth
     secret:
