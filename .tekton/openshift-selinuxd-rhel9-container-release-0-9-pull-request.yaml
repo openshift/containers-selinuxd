@@ -8,8 +8,7 @@ metadata:
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/cancel-in-progress: "true"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "main"
+    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch == "release-0.9"
   creationTimestamp: null
   labels:
     appstudio.openshift.io/application: security-profiles-operator-release-0-9
@@ -613,7 +612,7 @@ spec:
     - name: netrc
       optional: true
   taskRunTemplate:
-    serviceAccountName: build-pipeline-openshift-selinuxd-rhel9-container-dev
+    serviceAccountName: build-pipeline-openshift-selinuxd-rhel9-container-release-0-9
   workspaces:
   - name: git-auth
     secret:
