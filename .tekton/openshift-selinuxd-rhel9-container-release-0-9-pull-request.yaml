@@ -613,7 +613,7 @@ spec:
     - name: netrc
       optional: true
   taskRunTemplate:
-    serviceAccountName: build-pipeline-openshift-selinuxd-rhel9-container
+    serviceAccountName: build-pipeline-openshift-selinuxd-rhel9-container-dev
   workspaces:
   - name: git-auth
     secret:
