@@ -23,7 +23,7 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/ocp-isc-tenant/openshift-selinuxd-rhel9-container:{{revision}}
+    value: quay.io/redhat-user-workloads/ocp-isc-tenant/openshift-selinuxd-rhel9-container-release:{{revision}}
   - name: dockerfile
     value: images/el9/Dockerfile.openshift
   - name: hermetic
