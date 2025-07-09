@@ -28,6 +28,8 @@ spec:
     value: images/el9/Dockerfile.openshift
   - name: hermetic
     value: "true"
+  - name: build-source-image
+    value: "true"
   - name: prefetch-input
     value: '[{"type": "rpm", "path": "konflux/el9"}, {"type": "gomod", "path": "."}]'
   pipelineSpec:
