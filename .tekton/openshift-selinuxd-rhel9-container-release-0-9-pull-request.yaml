@@ -8,14 +8,13 @@ metadata:
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
     pipelinesascode.tekton.dev/cancel-in-progress: "true"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "main"
+    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch == "release-0.9"
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: security-profiles-operator-dev
-    appstudio.openshift.io/component: openshift-selinuxd-rhel9-container
+    appstudio.openshift.io/application: security-profiles-operator-release-0-9
+    appstudio.openshift.io/component: openshift-selinuxd-rhel9-container-release-0-9
     pipelines.appstudio.openshift.io/type: build
-  name: openshift-selinuxd-rhel9-container-on-pull-request
+  name: openshift-selinuxd-rhel9-container-release-0-9-on-pull-request
   namespace: ocp-isc-tenant
 spec:
   params:
@@ -24,12 +23,14 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/ocp-isc-tenant/openshift-selinuxd-rhel9-container:on-pr-{{revision}}
+    value: quay.io/redhat-user-workloads/ocp-isc-tenant/openshift-selinuxd-rhel9-container-release:on-pr-{{revision}}
   - name: image-expires-after
     value: 5d
   - name: dockerfile
     value: images/el9/Dockerfile.openshift
   - name: hermetic
+    value: "true"
+  - name: build-source-image
     value: "true"
   - name: prefetch-input
     value: '[{"type": "rpm", "path": "konflux/el9"}, {"type": "gomod", "path": "."}]'
@@ -613,7 +614,7 @@ spec:
     - name: netrc
       optional: true
   taskRunTemplate:
-    serviceAccountName: build-pipeline-openshift-selinuxd-rhel9-container
+    serviceAccountName: build-pipeline-openshift-selinuxd-rhel9-container-release-0-9
   workspaces:
   - name: git-auth
     secret:

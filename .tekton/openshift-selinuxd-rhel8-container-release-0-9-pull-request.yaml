@@ -4,18 +4,19 @@ metadata:
   annotations:
     build.appstudio.openshift.io/repo: https://github.com/openshift/containers-selinuxd?rev={{revision}}
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
+    build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
+    pipelinesascode.tekton.dev/cancel-in-progress: "true"
     build.appstudio.openshift.io/build-nudge-files: "bundle-hack/update_csv.go"
-    pipelinesascode.tekton.dev/cancel-in-progress: "false"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
-      == "main"
+    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
+      == "release-0.9"
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: security-profiles-operator-dev
-    appstudio.openshift.io/component: containers-selinuxd
+    appstudio.openshift.io/application: security-profiles-operator-release-0-9
+    appstudio.openshift.io/component: openshift-selinuxd-rhel8-container-release-0-9
     pipelines.appstudio.openshift.io/type: build
-  name: containers-selinuxd-on-push
+  name: openshift-selinuxd-rhel8-container-release-0-9-on-pull-request
   namespace: ocp-isc-tenant
 spec:
   params:
@@ -24,10 +25,14 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/ocp-isc-tenant/containers-selinuxd:{{revision}}
+    value: quay.io/redhat-user-workloads/ocp-isc-tenant/openshift-selinuxd-rhel8-container-release:on-pr-{{revision}}
+  - name: image-expires-after
+    value: 5d
   - name: dockerfile
     value: images/el8/Dockerfile.openshift
   - name: hermetic
+    value: "true"
+  - name: build-source-image
     value: "true"
   - name: prefetch-input
     value: '[{"type": "rpm", "path": "konflux/el8"}, {"type": "gomod", "path": "."}]'
@@ -147,7 +152,7 @@ spec:
         - name: name
           value: init
         - name: bundle
-          value: quay.io/konflux-ci/tekton-catalog/task-init:0.2@sha256:7a24924417260b7094541caaedd2853dc8da08d4bb0968f710a400d3e8062063
+          value: quay.io/konflux-ci/tekton-catalog/task-init:0.2@sha256:66e90d31e1386bf516fb548cd3e3f0082b5d0234b8b90dbf9e0d4684b70dbe1a
         - name: kind
           value: task
         resolver: bundles
@@ -199,7 +204,7 @@ spec:
         - name: name
           value: prefetch-dependencies-oci-ta
         - name: bundle
-          value: quay.io/konflux-ci/tekton-catalog/task-prefetch-dependencies-oci-ta:0.2@sha256:d48c621ae828a3cbca162e12ec166210d2d77a7ba23b0e5d60c4a1b94491adeb
+          value: quay.io/konflux-ci/tekton-catalog/task-prefetch-dependencies-oci-ta:0.2@sha256:1f6e2c9beba52d21c562ba1dea55f579f67e33b80099615bfd2043864896284d
         - name: kind
           value: task
         resolver: bundles
@@ -611,7 +616,7 @@ spec:
     - name: netrc
       optional: true
   taskRunTemplate:
-    serviceAccountName: build-pipeline-containers-selinuxd
+    serviceAccountName: build-pipeline-openshift-selinuxd-rhel8-container-release-0-9
   workspaces:
   - name: git-auth
     secret:

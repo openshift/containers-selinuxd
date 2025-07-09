@@ -4,18 +4,17 @@ metadata:
   annotations:
     build.appstudio.openshift.io/repo: https://github.com/openshift/containers-selinuxd?rev={{revision}}
     build.appstudio.redhat.com/commit_sha: '{{revision}}'
-    build.appstudio.redhat.com/pull_request_number: '{{pull_request_number}}'
     build.appstudio.redhat.com/target_branch: '{{target_branch}}'
-    pipelinesascode.tekton.dev/cancel-in-progress: "true"
+    build.appstudio.openshift.io/build-nudge-files: "bundle-hack/update_csv.go"
     pipelinesascode.tekton.dev/max-keep-runs: "3"
-    pipelinesascode.tekton.dev/on-cel-expression: event == "pull_request" && target_branch
-      == "main"
+    pipelinesascode.tekton.dev/on-cel-expression: event == "push" && target_branch
+      == "release-0.9"
   creationTimestamp: null
   labels:
-    appstudio.openshift.io/application: security-profiles-operator-dev
-    appstudio.openshift.io/component: containers-selinuxd
+    appstudio.openshift.io/application: security-profiles-operator-release-0-9
+    appstudio.openshift.io/component: openshift-selinuxd-rhel8-container-release-0-9
     pipelines.appstudio.openshift.io/type: build
-  name: containers-selinuxd-on-pull-request
+  name: openshift-selinuxd-rhel8-container-release-0-9-on-push
   namespace: ocp-isc-tenant
 spec:
   params:
@@ -24,12 +23,12 @@ spec:
   - name: revision
     value: '{{revision}}'
   - name: output-image
-    value: quay.io/redhat-user-workloads/ocp-isc-tenant/containers-selinuxd:on-pr-{{revision}}
-  - name: image-expires-after
-    value: 5d
+    value: quay.io/redhat-user-workloads/ocp-isc-tenant/openshift-selinuxd-rhel8-container-release:{{revision}}
   - name: dockerfile
     value: images/el8/Dockerfile.openshift
   - name: hermetic
+    value: "true"
+  - name: build-source-image
     value: "true"
   - name: prefetch-input
     value: '[{"type": "rpm", "path": "konflux/el8"}, {"type": "gomod", "path": "."}]'
@@ -613,7 +612,7 @@ spec:
     - name: netrc
       optional: true
   taskRunTemplate:
-    serviceAccountName: build-pipeline-containers-selinuxd
+    serviceAccountName: build-pipeline-openshift-selinuxd-rhel8-container-release-0-9
   workspaces:
   - name: git-auth
     secret:

@@ -43,5 +43,6 @@ LABEL \
 RUN mkdir -p /usr/share/selinuxd/templates
 COPY --from=builder /usr/share/udica/templates/* /usr/share/selinuxd/templates/
 COPY --from=builder /go/src/github.com/openshift/selinuxd/bin/selinuxdctl /usr/bin/
+COPY --from=builder /go/src/github.com/openshift/selinuxd/LICENSE /licenses/LICENSE
 
 ENTRYPOINT ["/usr/bin/selinuxdctl"]
