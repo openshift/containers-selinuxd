@@ -31,6 +31,8 @@ LABEL \
         io.k8s.display-name="selinux deamon for the Security Profiles Operator" \
         io.k8s.description="An operand for the Security Profiles Operator" \
         io.openshift.tags="selinux,security,deamon" \
+        description="A daemon that manages SELinux policies for the Security Profiles Operator" \
+        summary="SELinux daemon for the Security Profiles Operator" \
         com.redhat.delivery.appregistry="false" \
         maintainer="Red Hat ISC <isc-team@redhat.com>" \
         License="APL 2.0" \
