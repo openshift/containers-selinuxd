@@ -1,3 +1,4 @@
 {
-    "branchPrefix": "kflux/mintmaker/"
+    "branchPrefix": "kflux/mintmaker/",
+    "schedule": ["at any time"]
 }
