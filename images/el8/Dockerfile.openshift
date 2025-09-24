@@ -29,19 +29,20 @@ RUN INSTALL_PKGS="policycoreutils" && \
     rm -rf /var/cache/*
 
 LABEL \
-    io.k8s.display-name="selinux deamon for the Security Profiles Operator" \
-    io.k8s.description="An operand for the Security Profiles Operator" \
-    io.openshift.tags="selinux,security,deamon" \
-    description="A daemon that manages SELinux policies for the Security Profiles Operator" \
-    summary="SELinux daemon for the Security Profiles Operator" \
-    com.redhat.delivery.appregistry="false" \
-    maintainer="Red Hat ISC <isc-team@redhat.com>" \
-    License="APL 2.0" \
-    name="openshift-selinuxd" \
-    com.redhat.component="openshift-selinuxd-container" \
-    io.openshift.maintainer.product="OpenShift Container Platform" \
-    io.openshift.maintainer.component="Security Profiles Operator" \
-    version=0.10.0
+        io.k8s.display-name="selinux deamon for the Security Profiles Operator" \
+        io.k8s.description="An operand for the Security Profiles Operator" \
+        io.openshift.tags="selinux,security,deamon" \
+        description="A daemon that manages SELinux policies for the Security Profiles Operator" \
+        summary="SELinux daemon for the Security Profiles Operator" \
+        com.redhat.delivery.appregistry="false" \
+        maintainer="Red Hat ISC <isc-team@redhat.com>" \
+        License="APL 2.0" \
+        name="compliance/openshift-selinuxd-rhel8" \
+        cpe="cpe:/a:redhat:openshift_security_profiles_operator:1::el8" \
+        com.redhat.component="openshift-selinuxd-container" \
+        io.openshift.maintainer.product="OpenShift Container Platform" \
+        io.openshift.maintainer.component="Security Profiles Operator" \
+        version=0.10.0
 
 RUN mkdir -p /usr/share/selinuxd/templates
 COPY --from=builder /usr/share/udica/templates/* /usr/share/selinuxd/templates/
