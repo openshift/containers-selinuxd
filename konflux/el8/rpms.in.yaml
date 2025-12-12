@@ -1,0 +1,18 @@
+contentOrigin:
+  repofiles:
+     - ./redhat.repo
+
+packages:
+  - container-selinux
+  - go-toolset
+  - make
+  - findutils
+  - git-core
+  - policycoreutils
+
+arches:
+  - x86_64
+  - ppc64le
+
+context:
+    containerfile: ../../images/el8/Dockerfile.openshift
