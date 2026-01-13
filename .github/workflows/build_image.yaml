@@ -57,3 +57,20 @@ jobs:
           linux/amd64,linux/arm64
         dockerfiles: |
           ./images/el9/Dockerfile
+
+  build-el10:
+    name: Build EL10 image
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Buildah Action
+      uses: redhat-actions/buildah-build@v2
+      with:
+        image: selinuxd-el10
+        tags: latest ${{ github.sha }}
+        platforms: |
+          linux/amd64,linux/arm64
+        dockerfiles: |
+          ./images/el10/Dockerfile

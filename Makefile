@@ -28,6 +28,7 @@ IMAGE_REF=$(IMAGE_NAME):$(IMAGE_TAG)
 IMAGE_REPO?=quay.io/security-profiles-operator/$(IMAGE_REF)
 EL8_IMAGE_REPO?=quay.io/security-profiles-operator/$(IMAGE_NAME)-el8:$(IMAGE_TAG)
 EL9_IMAGE_REPO?=quay.io/security-profiles-operator/$(IMAGE_NAME)-el9:$(IMAGE_TAG)
+EL10_IMAGE_REPO?=quay.io/security-profiles-operator/$(IMAGE_NAME)-el10:$(IMAGE_TAG)
 # Tag centos the same as EL8 for now, remove after some SPO releases pass
 CENTOS_IMAGE_REPO?=quay.io/security-profiles-operator/$(IMAGE_NAME)-centos:$(IMAGE_TAG)
 FEDORA_IMAGE_REPO?=quay.io/security-profiles-operator/$(IMAGE_NAME)-fedora:$(IMAGE_TAG)
@@ -137,6 +138,10 @@ el8-image:
 .PHONY: el9-image
 el9-image:
 	$(CONTAINER_RUNTIME) build -f images/el9/Dockerfile -t $(EL9_IMAGE_REPO) .
+
+.PHONY: el10-image
+el10-image:
+	$(CONTAINER_RUNTIME) build -f images/el10/Dockerfile -t $(EL10_IMAGE_REPO) .
 
 .PHONY: fedora-image
 fedora-image:
