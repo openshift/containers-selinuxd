@@ -2,7 +2,7 @@ module github.com/containers/selinuxd
 
 go 1.24.0
 
-toolchain go1.24.9
+toolchain go1.25.6
 
 require (
 	github.com/cenkalti/backoff/v4 v4.2.1
