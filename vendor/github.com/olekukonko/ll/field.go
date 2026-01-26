@@ -2,10 +2,11 @@ package ll
 
 import (
 	"fmt"
-	"github.com/olekukonko/cat"
-	"github.com/olekukonko/ll/lx"
 	"os"
 	"strings"
+
+	"github.com/olekukonko/cat"
+	"github.com/olekukonko/ll/lx"
 )
 
 // FieldBuilder enables fluent addition of fields before logging.
@@ -232,9 +233,12 @@ func (fb *FieldBuilder) Fatal(args ...any) {
 		builder.WriteString(fmt.Sprint(arg))
 	}
 	// Log at Error level with the builder’s fields and a stack trace
-	fb.logger.log(lx.LevelError, lx.ClassText, builder.String(), fb.fields, true)
+	fb.logger.log(lx.LevelFatal, lx.ClassText, builder.String(), fb.fields, fb.logger.fatalStack)
+
 	// Exit the program with status code 1
-	os.Exit(1)
+	if fb.logger.fatalExits {
+		os.Exit(1)
+	}
 }
 
 // Fatalf logs a formatted message at Error level with a stack trace and the builder’s fields,

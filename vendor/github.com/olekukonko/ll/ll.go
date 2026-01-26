@@ -39,6 +39,8 @@ type Logger struct {
 	stackBufferSize int                    // Buffer size for capturing stack traces
 	separator       string                 // Separator for namespace paths (e.g., "/")
 	entries         atomic.Int64           // Tracks total log entries sent to handler
+	fatalExits      bool
+	fatalStack      bool
 }
 
 // New creates a new Logger with the given namespace and optional configurations.
@@ -71,22 +73,71 @@ func New(namespace string, opts ...Option) *Logger {
 	return logger
 }
 
-// AddContext adds a key-value pair to the logger's context, modifying it directly.
-// Unlike Context, it mutates the existing context. It is thread-safe using a write lock.
+// Apply applies one or more functional options to the default/global logger.
+// Useful for late configuration (e.g., after migration, attach VictoriaLogs handler,
+// set level, add middleware, etc.) without changing existing New() calls.
+//
 // Example:
 //
-//	logger := New("app").Enable()
-//	logger.AddContext("user", "alice")
-//	logger.Info("Action") // Output: [app] INFO: Action [user=alice]
-func (l *Logger) AddContext(key string, value interface{}) *Logger {
+//	// In main() or init(), after setting up handler
+//	ll.Apply(
+//	    ll.Handler(vlBatched),
+//	    ll.Level(ll.LevelInfo),
+//	    ll.Use(rateLimiterMiddleware),
+//	)
+//
+// Returns the default logger for chaining (if needed).
+func (l *Logger) Apply(opts ...Option) *Logger {
+	l.mu.Lock()
+	defer l.mu.Unlock()
+	for _, opt := range opts {
+		if opt != nil {
+			opt(l)
+		}
+	}
+	return l
+}
+
+// AddContext adds one or more key-value pairs to the logger's persistent context.
+// These fields will be included in **every** subsequent log message from this logger
+// (and its child namespace loggers).
+//
+// It supports variadic key-value pairs (string key, any value).
+// Non-string keys or uneven number of arguments will be safely ignored/logged.
+//
+// Returns the logger for chaining.
+//
+// Examples:
+//
+//	logger.AddContext("user", "alice", "env", "prod")
+//	logger.AddContext("request_id", reqID, "trace_id", traceID)
+//	logger.AddContext("service", "payment")                    // single pair
+func (l *Logger) AddContext(pairs ...any) *Logger {
 	l.mu.Lock()
 	defer l.mu.Unlock()
 
-	// Initialize context map if nil
+	// Lazy initialization of context map
 	if l.context == nil {
 		l.context = make(map[string]interface{})
 	}
-	l.context[key] = value
+
+	// Process key-value pairs
+	for i := 0; i < len(pairs)-1; i += 2 {
+		key, ok := pairs[i].(string)
+		if !ok {
+			l.Warnf("AddContext: non-string key at index %d: %v", i, pairs[i])
+			continue
+		}
+
+		value := pairs[i+1]
+		l.context[key] = value
+	}
+
+	// Optional: warn about uneven number of arguments
+	if len(pairs)%2 != 0 {
+		l.Warn("AddContext: uneven number of arguments, last value ignored")
+	}
+
 	return l
 }
 
@@ -357,6 +408,7 @@ func (l *Logger) Output(values ...interface{}) {
 	l.output(2, values...)
 }
 
+// mark logs the caller's file and line number along with an optional custom name label for tracing execution flow.
 func (l *Logger) output(skip int, values ...interface{}) {
 	if !l.shouldLog(lx.LevelInfo) {
 		return
@@ -536,8 +588,10 @@ func (l *Logger) Fatal(args ...any) {
 		os.Exit(1)
 	}
 
-	l.log(lx.LevelError, lx.ClassText, cat.Space(args...), nil, false)
-	os.Exit(1)
+	l.log(lx.LevelFatal, lx.ClassText, cat.Space(args...), nil, l.fatalStack)
+	if l.fatalExits {
+		os.Exit(1)
+	}
 }
 
 // Fatalf logs a formatted message at Error level with a stack trace and exits the program.
@@ -795,6 +849,7 @@ func (l *Logger) Mark(name ...string) {
 	l.mark(2, name...)
 }
 
+// mark logs the caller's file and line number along with an optional custom name label for tracing execution flow.
 func (l *Logger) mark(skip int, names ...string) {
 	// Skip logging if Info level is not enabled
 	if !l.shouldLog(lx.LevelInfo) {
@@ -978,7 +1033,7 @@ func (l *Logger) Panic(args ...any) {
 		panic(msg)
 	}
 
-	l.log(lx.LevelError, lx.ClassText, msg, nil, true)
+	l.log(lx.LevelFatal, lx.ClassText, msg, nil, true)
 	panic(msg)
 }
 
@@ -1198,6 +1253,17 @@ func (l *Logger) Timestamped(enable bool, format ...string) *Logger {
 	return l
 }
 
+// Toggle enables or disables the logger based on the provided boolean value and returns the updated logger instance.
+func (l *Logger) Toggle(v bool) *Logger {
+	if v {
+		l.Resume()
+		return l.Enable()
+	}
+
+	l.Suspend()
+	return l.Disable()
+}
+
 // Use adds a middleware function to process log entries before they are handled, returning
 // a Middleware handle for removal. Middleware returning a non-nil error stops the log.
 // It is thread-safe using a write lock.
@@ -1266,49 +1332,73 @@ func (l *Logger) Warnf(format string, args ...any) {
 //
 //	logger.Dbg(x) // Calls dbg(2, x)
 func (l *Logger) dbg(skip int, values ...interface{}) {
-	for _, exp := range values {
-		// Get caller information (file, line)
-		_, file, line, ok := runtime.Caller(skip)
-		if !ok {
-			l.log(lx.LevelError, lx.ClassText, "Dbg: Unable to parse runtime caller", nil, false)
-			return
+	// Resolve caller frame robustly.
+	file, line, ok := callerFrame(skip)
+	if !ok {
+		// No frame → still log values
+		for _, exp := range values {
+			l.log(lx.LevelInfo, lx.ClassText, fmt.Sprintf("[?:?] %+v", exp), nil, false)
 		}
+		return
+	}
 
-		// Open source file
-		f, err := os.Open(file)
-		if err != nil {
-			l.log(lx.LevelError, lx.ClassText, "Dbg: Unable to open expected file", nil, false)
-			return
-		}
+	shortFile := file
+	if idx := strings.LastIndex(file, "/"); idx >= 0 {
+		shortFile = file[idx+1:]
+	}
 
-		// Scan file to find the line
-		scanner := bufio.NewScanner(f)
-		scanner.Split(bufio.ScanLines)
-		var out string
+	// Try to read the specific source line (best-effort).
+	srcLine := ""
+	if f, err := os.Open(file); err == nil {
+		sc := bufio.NewScanner(f)
 		i := 1
-		for scanner.Scan() {
+		for sc.Scan() {
 			if i == line {
-				// Extract expression between parentheses
-				v := scanner.Text()[strings.Index(scanner.Text(), "(")+1 : len(scanner.Text())-strings.Index(reverseString(scanner.Text()), ")")-1]
-				// Format output with file, line, expression, and value
-				out = fmt.Sprintf("[%s:%d] %s = %+v", file[len(file)-strings.Index(reverseString(file), "/"):], line, v, exp)
+				srcLine = sc.Text()
 				break
 			}
 			i++
 		}
-		if err := scanner.Err(); err != nil {
-			l.log(lx.LevelError, lx.ClassText, err.Error(), nil, false)
-			return
+		_ = f.Close()
+		// Ignore scan error; srcLine stays empty and we fallback.
+	}
+
+	// Extract expression text best-effort from srcLine.
+	// If it fails, we fallback to just printing the value.
+	expr := ""
+	if srcLine != "" {
+		// Prefer extracting inside Dbg(...)
+		if a := strings.Index(srcLine, "Dbg("); a >= 0 {
+			rest := srcLine[a+len("Dbg("):]
+			if b := strings.LastIndex(rest, ")"); b >= 0 {
+				expr = strings.TrimSpace(rest[:b])
+			}
+		} else {
+			// Fallback: anything inside first (...) on the line
+			a := strings.Index(srcLine, "(")
+			b := strings.LastIndex(srcLine, ")")
+			if a >= 0 && b > a {
+				expr = strings.TrimSpace(srcLine[a+1 : b])
+			}
 		}
-		// Log based on value type
+	}
+
+	for _, exp := range values {
+		var out string
+		if expr != "" {
+			out = fmt.Sprintf("[%s:%d] %s = %+v", shortFile, line, expr, exp)
+		} else {
+			// IMPORTANT: this is what makes it work in compiled binaries
+			// even when the source file is not present.
+			out = fmt.Sprintf("[%s:%d] %+v", shortFile, line, exp)
+		}
+
 		switch exp.(type) {
 		case error:
 			l.log(lx.LevelError, lx.ClassText, out, nil, false)
 		default:
 			l.log(lx.LevelInfo, lx.ClassText, out, nil, false)
 		}
-
-		f.Close()
 	}
 }
 
@@ -1460,53 +1550,31 @@ func (l *Logger) shouldLog(level lx.LevelType) bool {
 	return true
 }
 
-// WithHandler sets the handler for the logger as a functional option for configuring
-// a new logger instance.
-// Example:
-//
-//	logger := New("app", WithHandler(lh.NewJSONHandler(os.Stdout)))
-func WithHandler(handler lx.Handler) Option {
-	return func(l *Logger) {
-		l.handler = handler
+// callerFrame tries to resolve the *user* callsite even when inlining changes.
+// It starts from "skip" but then walks forward until it finds a frame outside
+// this package (ll).
+func callerFrame(skip int) (file string, line int, ok bool) {
+	// +2 to skip callerFrame + dbg itself.
+	pcs := make([]uintptr, 32)
+	n := runtime.Callers(skip+2, pcs)
+	if n == 0 {
+		return "", 0, false
 	}
-}
 
-// WithTimestamped returns an Option that configures timestamp settings for the logger's existing handler.
-// It enables or disables timestamp logging and optionally sets the timestamp format if the handler
-// supports the lx.Timestamper interface. If no handler is set, the function has no effect.
-// Parameters:
-//
-//	enable: Boolean to enable or disable timestamp logging
-//	format: Optional string(s) to specify the timestamp format
-func WithTimestamped(enable bool, format ...string) Option {
-	return func(l *Logger) {
-		if l.handler != nil { // Check if a handler is set
-			// Verify if the handler supports the lx.Timestamper interface
-			if h, ok := l.handler.(lx.Timestamper); ok {
-				h.Timestamped(enable, format...) // Apply timestamp settings to the handler
-			}
+	frames := runtime.CallersFrames(pcs[:n])
+	for {
+		fr, more := frames.Next()
+
+		// fr.Function looks like: "github.com/you/mod/ll.(*Logger).Dbg"
+		// We want the first frame that is NOT inside package ll.
+		// Tweak this string check if your module path differs.
+		if fr.Function == "" || !strings.Contains(fr.Function, "/ll.") && !strings.Contains(fr.Function, ".ll.") {
+			return fr.File, fr.Line, true
 		}
-	}
-}
 
-// WithLevel sets the minimum log level for the logger as a functional option for
-// configuring a new logger instance.
-// Example:
-//
-//	logger := New("app", WithLevel(lx.LevelWarn))
-func WithLevel(level lx.LevelType) Option {
-	return func(l *Logger) {
-		l.level = level
-	}
-}
-
-// WithStyle sets the namespace formatting style for the logger as a functional option
-// for configuring a new logger instance.
-// Example:
-//
-//	logger := New("app", WithStyle(lx.NestedPath))
-func WithStyle(style lx.StyleType) Option {
-	return func(l *Logger) {
-		l.style = style
+		if !more {
+			// Fallback: return the last frame we saw
+			return fr.File, fr.Line, fr.File != ""
+		}
 	}
 }

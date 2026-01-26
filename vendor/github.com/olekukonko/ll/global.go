@@ -260,8 +260,8 @@ func Context(fields map[string]interface{}) *Logger {
 //
 //	ll.AddContext("user", "alice")
 //	ll.Info("Action") // Output: [] INFO: Action [user=alice]
-func AddContext(key string, value interface{}) *Logger {
-	return defaultLogger.AddContext(key, value)
+func AddContext(pairs ...any) *Logger {
+	return defaultLogger.AddContext(pairs...)
 }
 
 // GetContext returns the default logger’s context map of persistent key-value fields.
@@ -269,7 +269,7 @@ func AddContext(key string, value interface{}) *Logger {
 // Example:
 //
 //	ll.AddContext("user", "alice")
-//	ctx := ll.GetContext() // Returns map[string]interface{}{"user": "alice"}
+//	ctx := ll.GetContext() // Returns map[string]interface{}{"user": "alice"}k
 func GetContext() map[string]interface{} {
 	return defaultLogger.GetContext()
 }
@@ -666,4 +666,13 @@ func Output(values ...interface{}) {
 func Inspect(values ...interface{}) {
 	o := NewInspector(defaultLogger)
 	o.Log(2, values...)
+}
+
+func Apply(opts ...Option) *Logger {
+	return defaultLogger.Apply(opts...)
+
+}
+
+func Toggle(v bool) *Logger {
+	return defaultLogger.Toggle(v)
 }
