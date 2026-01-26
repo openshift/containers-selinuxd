@@ -11,6 +11,28 @@ import (
 	"github.com/olekukonko/ll/lx"
 )
 
+type TextOption func(*TextHandler)
+
+// WithTextTimeFormat enables timestamp display and optionally sets a custom time format.
+// It configures the TextHandler to include temporal information in each log entry,
+// allowing for precise tracking of when log events occur.
+// If the format string is empty, it defaults to time.RFC3339.
+func WithTextTimeFormat(format string) TextOption {
+	return func(t *TextHandler) {
+		t.Timestamped(true, format)
+	}
+}
+
+// WithTextShowTime enables or disables timestamp display in log entries.
+// This option provides direct control over the visibility of the time prefix
+// without altering the underlying time format configured in the handler.
+// Setting show to true will prepend timestamps to all subsequent regular log outputs.
+func WithTextShowTime(show bool) TextOption {
+	return func(t *TextHandler) {
+		t.showTime = show
+	}
+}
+
 // TextHandler is a handler that outputs log entries as plain text.
 // It formats log entries with namespace, level, message, fields, and optional stack traces,
 // writing the result to the provided writer.
@@ -29,12 +51,18 @@ type TextHandler struct {
 //	handler := NewTextHandler(os.Stdout)
 //	logger := ll.New("app").Enable().Handler(handler)
 //	logger.Info("Test") // Output: [app] INFO: Test
-func NewTextHandler(w io.Writer) *TextHandler {
-	return &TextHandler{
+func NewTextHandler(w io.Writer, opts ...TextOption) *TextHandler {
+	t := &TextHandler{
 		w:          w,
 		showTime:   false,
 		timeFormat: time.RFC3339,
 	}
+
+	for _, opt := range opts {
+		opt(t)
+	}
+
+	return t
 }
 
 // Timestamped enables or disables timestamp display and optionally sets a custom time format.

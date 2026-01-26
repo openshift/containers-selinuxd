@@ -3,12 +3,13 @@ package lh
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/olekukonko/ll/lx"
 	"io"
 	"os"
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/olekukonko/ll/lx"
 )
 
 // JSONHandler is a handler that outputs log entries as JSON objects.
@@ -110,7 +111,7 @@ func (h *JSONHandler) handleRegular(e *lx.Entry) error {
 		enc.SetIndent("", "  ")
 	}
 	// Log encoding attempt for debugging
-	fmt.Fprintf(os.Stderr, "Encoding JSON entry: %v\n", e.Message)
+	// fmt.Fprintf(os.Stderr, "Encoding JSON entry: %v\n", e.Message)
 	// Encode and write JSON
 	err := enc.Encode(entry)
 	if err != nil {
