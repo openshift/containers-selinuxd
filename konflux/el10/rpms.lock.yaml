@@ -123,13 +123,13 @@ arches:
     name: golang-src
     evr: 1.25.5-1.el10_1
     sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/k/kernel-headers-6.12.0-124.28.1.el10_1.ppc64le.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/k/kernel-headers-6.12.0-124.29.1.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 3371065
-    checksum: sha256:2ef9fa7d0094b6d8ad01ffc71b7983ee36de3537bf63a6dadcac74b427a8cdc8
+    size: 3380665
+    checksum: sha256:d9ad13f556766a42254234a06f2d010263c10def25973bc657e976e062752744
     name: kernel-headers
-    evr: 6.12.0-124.28.1.el10_1
-    sourcerpm: kernel-6.12.0-124.28.1.el10_1.src.rpm
+    evr: 6.12.0-124.29.1.el10_1
+    sourcerpm: kernel-6.12.0-124.29.1.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/l/libasan-14.3.1-2.1.el10.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
     size: 553228
@@ -1459,12 +1459,12 @@ arches:
     checksum: sha256:5715b494471c7d28ee7dbac67ea1b1fdb6ab711e032dab9b2a062ee9c330de20
     name: jansson
     evr: 2.14-3.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.28.1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.29.1.el10_1.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
-    size: 156167588
-    checksum: sha256:57e922550086a803394004f9e4c2e8e49850f686317d8eae935565a8f6b42ebf
+    size: 156186697
+    checksum: sha256:095ee4921035cd0d2a4460ce1c9fad27c5c792e33bb5c7ef2fc3d0be91cc7b46
     name: kernel
-    evr: 6.12.0-124.28.1.el10_1
+    evr: 6.12.0-124.29.1.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/k/kmod-31-12.el10.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
     size: 623740
@@ -1749,13 +1749,13 @@ arches:
     name: golang-src
     evr: 1.25.5-1.el10_1
     sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/k/kernel-headers-6.12.0-124.28.1.el10_1.x86_64.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/k/kernel-headers-6.12.0-124.29.1.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 3391397
-    checksum: sha256:3bf3373abd5366eaabe1e673030edd91d6a8d0102f0be51707ab0e7b1496e284
+    size: 3401065
+    checksum: sha256:71f197b510563319af4ca49aa440ecd3e561854d53637845eb8d1185565eabb5
     name: kernel-headers
-    evr: 6.12.0-124.28.1.el10_1
-    sourcerpm: kernel-6.12.0-124.28.1.el10_1.src.rpm
+    evr: 6.12.0-124.29.1.el10_1
+    sourcerpm: kernel-6.12.0-124.29.1.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/l/libmpc-1.3.1-7.el10.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
     size: 75330
@@ -3057,12 +3057,12 @@ arches:
     checksum: sha256:5715b494471c7d28ee7dbac67ea1b1fdb6ab711e032dab9b2a062ee9c330de20
     name: jansson
     evr: 2.14-3.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.28.1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.29.1.el10_1.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
-    size: 156167588
-    checksum: sha256:57e922550086a803394004f9e4c2e8e49850f686317d8eae935565a8f6b42ebf
+    size: 156186697
+    checksum: sha256:095ee4921035cd0d2a4460ce1c9fad27c5c792e33bb5c7ef2fc3d0be91cc7b46
     name: kernel
-    evr: 6.12.0-124.28.1.el10_1
+    evr: 6.12.0-124.29.1.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/k/kmod-31-12.el10.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
     size: 623740
