@@ -11,27 +11,27 @@ arches:
     name: apr
     evr: 1.7.5-2.el10
     sourcerpm: apr-1.7.5-2.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/a/apr-util-1.6.3-21.el10.ppc64le.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/a/apr-util-1.6.3-23.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 114962
-    checksum: sha256:cfcae18974d5f7393f3ff73f6e0a2615cbcc47717348e8aabf1f6d7b2f6a547e
+    size: 116846
+    checksum: sha256:972cf9bdd2ccd7da7e49fe9a41a74ca68a88979d542229b223a79c3cd122d9ed
     name: apr-util
-    evr: 1.6.3-21.el10
-    sourcerpm: apr-util-1.6.3-21.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/a/apr-util-lmdb-1.6.3-21.el10.ppc64le.rpm
+    evr: 1.6.3-23.el10_1
+    sourcerpm: apr-util-1.6.3-23.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/a/apr-util-lmdb-1.6.3-23.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 17604
-    checksum: sha256:be4e942e843caea7fad9225daae43cf7f9454785c8b7b6c6e62c0d07b120ce7f
+    size: 20597
+    checksum: sha256:0839e65db8b3227b06dab23e6cdba8ad0f4ccebaf6b963984520ada4e8e4c27a
     name: apr-util-lmdb
-    evr: 1.6.3-21.el10
-    sourcerpm: apr-util-1.6.3-21.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/a/apr-util-openssl-1.6.3-21.el10.ppc64le.rpm
+    evr: 1.6.3-23.el10_1
+    sourcerpm: apr-util-1.6.3-23.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/a/apr-util-openssl-1.6.3-23.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 19119
-    checksum: sha256:16446732ef5be9dafc8e3bd2ec9e9a57d2e3a5aafe2d5fa7020fd7fff1000b6f
+    size: 22108
+    checksum: sha256:6d51297c0f695258d220164d60a3ee223b60112aba4082f3758fe81a939507c9
     name: apr-util-openssl
-    evr: 1.6.3-21.el10
-    sourcerpm: apr-util-1.6.3-21.el10.src.rpm
+    evr: 1.6.3-23.el10_1
+    sourcerpm: apr-util-1.6.3-23.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/c/container-selinux-2.240.0-1.el10.noarch.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
     size: 59582
@@ -81,13 +81,13 @@ arches:
     name: git-core-doc
     evr: 2.47.3-1.el10_0
     sourcerpm: git-2.47.3-1.el10_0.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/glibc-devel-2.39-58.el10_1.2.ppc64le.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/glibc-devel-2.39-58.el10_1.7.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 617233
-    checksum: sha256:d518c9ef95beed7c2d4720e796682d2703a340e670ba40b0a68229484314c124
+    size: 603253
+    checksum: sha256:e63de05700c8d82ee3be4b2940653ddf8f41c9ecafd8b41ebc8dda3df745325e
     name: glibc-devel
-    evr: 2.39-58.el10_1.2
-    sourcerpm: glibc-2.39-58.el10_1.2.src.rpm
+    evr: 2.39-58.el10_1.7
+    sourcerpm: glibc-2.39-58.el10_1.7.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/go-toolset-1.25.5-1.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
     size: 14393
@@ -123,13 +123,13 @@ arches:
     name: golang-src
     evr: 1.25.5-1.el10_1
     sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/k/kernel-headers-6.12.0-124.28.1.el10_1.ppc64le.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/k/kernel-headers-6.12.0-124.31.1.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 3371065
-    checksum: sha256:2ef9fa7d0094b6d8ad01ffc71b7983ee36de3537bf63a6dadcac74b427a8cdc8
+    size: 3384857
+    checksum: sha256:fd9d866beaa74d8c092c4671974b719f1f8cbf524940b84410f06fc2791acc5c
     name: kernel-headers
-    evr: 6.12.0-124.28.1.el10_1
-    sourcerpm: kernel-6.12.0-124.28.1.el10_1.src.rpm
+    evr: 6.12.0-124.31.1.el10_1
+    sourcerpm: kernel-6.12.0-124.31.1.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/l/libasan-14.3.1-2.1.el10.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
     size: 553228
@@ -172,13 +172,13 @@ arches:
     name: libxkbcommon
     evr: 1.7.0-4.el10
     sourcerpm: libxkbcommon-1.7.0-4.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/o/openssl-devel-3.5.1-5.el10_1.ppc64le.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/o/openssl-devel-3.5.1-7.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 4386156
-    checksum: sha256:ff1df01e90bfb08f1a4cdd6980bc44f2b061cdaf639fd19377e74044f261875c
+    size: 4394340
+    checksum: sha256:9972a3ba39d6cf5815b0d41677b110d50c260ecce8155525439ed248851c4ffa
     name: openssl-devel
-    evr: 1:3.5.1-5.el10_1
-    sourcerpm: openssl-3.5.1-5.el10_1.src.rpm
+    evr: 1:3.5.1-7.el10_1
+    sourcerpm: openssl-3.5.1-7.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/p/perl-AutoLoader-5.74-512.2.el10_0.noarch.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
     size: 22487
@@ -865,13 +865,13 @@ arches:
     name: libedit
     evr: 3.1-52.20230828cvs.el10
     sourcerpm: libedit-3.1-52.20230828cvs.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/l/libfdisk-2.40.2-13.el10.ppc64le.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/l/libfdisk-2.40.2-15.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-baseos-rpms
-    size: 176944
-    checksum: sha256:0eaed21f3088b04583ab973ab8dfcdbcd6b230b1afaceb04b6e549cf7ce7eebc
+    size: 182913
+    checksum: sha256:b021484c0a82a7dbe28bd410d8d57628327aca7bf82425f5d82e86dc6d615deb
     name: libfdisk
-    evr: 2.40.2-13.el10
-    sourcerpm: util-linux-2.40.2-13.el10.src.rpm
+    evr: 2.40.2-15.el10_1
+    sourcerpm: util-linux-2.40.2-15.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/l/libfido2-1.14.0-7.el10.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-baseos-rpms
     size: 112963
@@ -1054,20 +1054,20 @@ arches:
     name: systemd-pam
     evr: 257-13.el10
     sourcerpm: systemd-257-13.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/u/util-linux-2.40.2-13.el10.ppc64le.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/u/util-linux-2.40.2-15.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-baseos-rpms
-    size: 1360835
-    checksum: sha256:bc15a42a0291f8f996e7a6f332b195db5bf54b4316ff22c2abd62227b875ae2a
+    size: 1367007
+    checksum: sha256:c04ef36410f27e67256bde1e753d3f9b3608ec3e21ac630e39ac77bba9d30dd5
     name: util-linux
-    evr: 2.40.2-13.el10
-    sourcerpm: util-linux-2.40.2-13.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/u/util-linux-core-2.40.2-13.el10.ppc64le.rpm
+    evr: 2.40.2-15.el10_1
+    sourcerpm: util-linux-2.40.2-15.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/u/util-linux-core-2.40.2-15.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-baseos-rpms
-    size: 579819
-    checksum: sha256:df38a1af9edfa87809927d340d4db74c0845a3d0d41775a717f0b1493b6371f6
+    size: 585851
+    checksum: sha256:52a56c0e008bfc9f013851b5759b8470e5b4d015031ac87b243c23ed4500e13e
     name: util-linux-core
-    evr: 2.40.2-13.el10
-    sourcerpm: util-linux-2.40.2-13.el10.src.rpm
+    evr: 2.40.2-15.el10_1
+    sourcerpm: util-linux-2.40.2-15.el10_1.src.rpm
   source:
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/source/SRPMS/Packages/a/apr-1.7.5-2.el10.src.rpm
     repoid: rhel-10-for-ppc64le-appstream-source-rpms
@@ -1075,12 +1075,12 @@ arches:
     checksum: sha256:69cc68b0b5f1fbc3ddad56d47022addf1ed33496fa8090ca910184ee702a4165
     name: apr
     evr: 1.7.5-2.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/source/SRPMS/Packages/a/apr-util-1.6.3-21.el10.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/source/SRPMS/Packages/a/apr-util-1.6.3-23.el10_1.src.rpm
     repoid: rhel-10-for-ppc64le-appstream-source-rpms
-    size: 500668
-    checksum: sha256:b5f0033f8f0e93e9d1db8a770e68ba51fec223ad3aed06cc432453147bbf8784
+    size: 503600
+    checksum: sha256:5f6e361a4a7398d9eab3c2346cfe45856b50edff301daa537680bcc4b2c09edf
     name: apr-util
-    evr: 1.6.3-21.el10
+    evr: 1.6.3-23.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/source/SRPMS/Packages/c/container-selinux-2.240.0-1.el10.src.rpm
     repoid: rhel-10-for-ppc64le-appstream-source-rpms
     size: 47301
@@ -1435,12 +1435,12 @@ arches:
     checksum: sha256:fbb507a42a8edb9d0d0cbc7ec394d1fe7bb7c2f0456b98ce4fb5fa20036b3cbc
     name: gdbm
     evr: 1:1.23-12.el10_0
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/g/glibc-2.39-58.el10_1.2.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/g/glibc-2.39-58.el10_1.7.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
-    size: 19960777
-    checksum: sha256:4cf3f1c3538487fe0ef23fd92d00d1fd169541cdd8855df4ae1a734a387b15c4
+    size: 20318950
+    checksum: sha256:a3719e5564a944ca286a359f7fc20e7befb5912fe4b3179d1aa0fd5f07bf1240
     name: glibc
-    evr: 2.39-58.el10_1.2
+    evr: 2.39-58.el10_1.7
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/g/groff-1.23.0-10.el10.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
     size: 7488146
@@ -1459,12 +1459,12 @@ arches:
     checksum: sha256:5715b494471c7d28ee7dbac67ea1b1fdb6ab711e032dab9b2a062ee9c330de20
     name: jansson
     evr: 2.14-3.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.28.1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.31.1.el10_1.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
-    size: 156167588
-    checksum: sha256:57e922550086a803394004f9e4c2e8e49850f686317d8eae935565a8f6b42ebf
+    size: 156192285
+    checksum: sha256:78c6c5baa4cd37ce07e24ac10705f90d30f062e224737fe9175978313c97dae5
     name: kernel
-    evr: 6.12.0-124.28.1.el10_1
+    evr: 6.12.0-124.31.1.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/k/kmod-31-12.el10.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
     size: 623740
@@ -1573,12 +1573,12 @@ arches:
     checksum: sha256:f79d5f073d8be108a59152f4d2327d0880abfae685482aeceff136b5be55de51
     name: openssh
     evr: 9.9p1-12.el10_1
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/o/openssl-3.5.1-5.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/o/openssl-3.5.1-7.el10_1.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
-    size: 53407310
-    checksum: sha256:0e731cae33a67c5134ebd35e5e2968ee131b0059149175a1bb029369fb32b545
+    size: 53462164
+    checksum: sha256:648b8cd38cd34ffd462cb490fa75729efa38f5d3e799918378d51679ce03c3bd
     name: openssl
-    evr: 1:3.5.1-5.el10_1
+    evr: 1:3.5.1-7.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/p/pam-1.6.1-8.el10.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
     size: 1237988
@@ -1621,12 +1621,12 @@ arches:
     checksum: sha256:619488f8b734592f49c1ecc17290463e4663a3710bb62bbd9533413f0bb94566
     name: systemd
     evr: 257-13.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/u/util-linux-2.40.2-13.el10.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/u/util-linux-2.40.2-15.el10_1.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
-    size: 9051869
-    checksum: sha256:ef2ce9b634a5c9d66aeda344e7ce1a6282677d278615d189f6388582962c90e0
+    size: 9062009
+    checksum: sha256:c39f769b8989c6b5e81d94300957144b12bb08cfd79842b282ecb2212d17138a
     name: util-linux
-    evr: 2.40.2-13.el10
+    evr: 2.40.2-15.el10_1
   module_metadata: []
 - arch: x86_64
   packages:
@@ -1637,27 +1637,27 @@ arches:
     name: apr
     evr: 1.7.5-2.el10
     sourcerpm: apr-1.7.5-2.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/a/apr-util-1.6.3-21.el10.x86_64.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/a/apr-util-1.6.3-23.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 103881
-    checksum: sha256:7fc6733f2a2f52ba71c93ae6c6b4548192e328d123fbc9753d9c3496cc3073ce
+    size: 105897
+    checksum: sha256:4f5b154b4b969d98a72d70c7ee8135ee4ba872af715d0ab24d316557b258ef88
     name: apr-util
-    evr: 1.6.3-21.el10
-    sourcerpm: apr-util-1.6.3-21.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/a/apr-util-lmdb-1.6.3-21.el10.x86_64.rpm
+    evr: 1.6.3-23.el10_1
+    sourcerpm: apr-util-1.6.3-23.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/a/apr-util-lmdb-1.6.3-23.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 16810
-    checksum: sha256:92b9d9eedfbf7afca3ad2c417a26bf16909764036c36b00a68d75b72c316e1b9
+    size: 20157
+    checksum: sha256:7bd27a05c21d46baaaf55a77f1776a5f06069882603af84141a4710b138a3771
     name: apr-util-lmdb
-    evr: 1.6.3-21.el10
-    sourcerpm: apr-util-1.6.3-21.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/a/apr-util-openssl-1.6.3-21.el10.x86_64.rpm
+    evr: 1.6.3-23.el10_1
+    sourcerpm: apr-util-1.6.3-23.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/a/apr-util-openssl-1.6.3-23.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 18911
-    checksum: sha256:813a498ab7c787b89632227336322566c95b476a48f12a1fe50aceb6608efced
+    size: 22022
+    checksum: sha256:4f5c0ae99cb6c139759084b36e625b3aa5172c2af1923544604650d20fc51c25
     name: apr-util-openssl
-    evr: 1.6.3-21.el10
-    sourcerpm: apr-util-1.6.3-21.el10.src.rpm
+    evr: 1.6.3-23.el10_1
+    sourcerpm: apr-util-1.6.3-23.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/c/container-selinux-2.240.0-1.el10.noarch.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
     size: 59582
@@ -1707,13 +1707,13 @@ arches:
     name: git-core-doc
     evr: 2.47.3-1.el10_0
     sourcerpm: git-2.47.3-1.el10_0.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/glibc-devel-2.39-58.el10_1.2.x86_64.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/glibc-devel-2.39-58.el10_1.7.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 616132
-    checksum: sha256:8ca479310c4e7ffd0bb6d36f58659c96976d9cac49b93749c810201b315acc9c
+    size: 602082
+    checksum: sha256:9b4fa52de1049e5b15c4f037d7746c01e67de065a9a93fb71e25a086a80ab11d
     name: glibc-devel
-    evr: 2.39-58.el10_1.2
-    sourcerpm: glibc-2.39-58.el10_1.2.src.rpm
+    evr: 2.39-58.el10_1.7
+    sourcerpm: glibc-2.39-58.el10_1.7.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/go-toolset-1.25.5-1.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
     size: 14433
@@ -1749,13 +1749,13 @@ arches:
     name: golang-src
     evr: 1.25.5-1.el10_1
     sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/k/kernel-headers-6.12.0-124.28.1.el10_1.x86_64.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/k/kernel-headers-6.12.0-124.31.1.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 3391397
-    checksum: sha256:3bf3373abd5366eaabe1e673030edd91d6a8d0102f0be51707ab0e7b1496e284
+    size: 3405209
+    checksum: sha256:4090f751bcc18493dc2ff35f09a47ef44e06bdae69d5208a1b7a7881ec6c3c41
     name: kernel-headers
-    evr: 6.12.0-124.28.1.el10_1
-    sourcerpm: kernel-6.12.0-124.28.1.el10_1.src.rpm
+    evr: 6.12.0-124.31.1.el10_1
+    sourcerpm: kernel-6.12.0-124.31.1.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/l/libmpc-1.3.1-7.el10.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
     size: 75330
@@ -1784,13 +1784,13 @@ arches:
     name: libxkbcommon
     evr: 1.7.0-4.el10
     sourcerpm: libxkbcommon-1.7.0-4.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/o/openssl-devel-3.5.1-5.el10_1.x86_64.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/o/openssl-devel-3.5.1-7.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 4386787
-    checksum: sha256:d6d6ba504145eb6cfcd1e6e173d7627bf595d9e7beac644afa8e6443cab6beb4
+    size: 4394854
+    checksum: sha256:71ceb09df978afbbe787f9326bdc2f0ac85319527b42b837c0f80fa204ec3efa
     name: openssl-devel
-    evr: 1:3.5.1-5.el10_1
-    sourcerpm: openssl-3.5.1-5.el10_1.src.rpm
+    evr: 1:3.5.1-7.el10_1
+    sourcerpm: openssl-3.5.1-7.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/p/perl-AutoLoader-5.74-512.2.el10_0.noarch.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
     size: 22487
@@ -2470,13 +2470,13 @@ arches:
     name: libedit
     evr: 3.1-52.20230828cvs.el10
     sourcerpm: libedit-3.1-52.20230828cvs.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/l/libfdisk-2.40.2-13.el10.x86_64.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/l/libfdisk-2.40.2-15.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-baseos-rpms
-    size: 162999
-    checksum: sha256:91bf85933630a2c1bff58b84055fe07a526c46d3d4171d8273d0c6170d722185
+    size: 168873
+    checksum: sha256:6345ef0d6a4aaf82f732419a854e75213792b279f28d4ae34d6b86abe5e8cad0
     name: libfdisk
-    evr: 2.40.2-13.el10
-    sourcerpm: util-linux-2.40.2-13.el10.src.rpm
+    evr: 2.40.2-15.el10_1
+    sourcerpm: util-linux-2.40.2-15.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/l/libfido2-1.14.0-7.el10.x86_64.rpm
     repoid: rhel-10-for-x86_64-baseos-rpms
     size: 102913
@@ -2652,20 +2652,20 @@ arches:
     name: systemd-pam
     evr: 257-13.el10
     sourcerpm: systemd-257-13.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/u/util-linux-2.40.2-13.el10.x86_64.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/u/util-linux-2.40.2-15.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-baseos-rpms
-    size: 1320232
-    checksum: sha256:aafaaf9ed81450b05bafbf4726d121db6ae0980af97d6e4219182e4975bdd9b5
+    size: 1326327
+    checksum: sha256:051f68098b2a20dad1e43244d39d9e8f5d0cb9a45ba3cdc3afcd83e104b3c68f
     name: util-linux
-    evr: 2.40.2-13.el10
-    sourcerpm: util-linux-2.40.2-13.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/u/util-linux-core-2.40.2-13.el10.x86_64.rpm
+    evr: 2.40.2-15.el10_1
+    sourcerpm: util-linux-2.40.2-15.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/u/util-linux-core-2.40.2-15.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-baseos-rpms
-    size: 562842
-    checksum: sha256:f0f631813796ff2d8025d8c0bdc7e39dd9906d24ed8431cc1677995e784973ab
+    size: 571449
+    checksum: sha256:42d1d206693eafba1fdf00b5fac972542dfe0f201890e697f174757615262606
     name: util-linux-core
-    evr: 2.40.2-13.el10
-    sourcerpm: util-linux-2.40.2-13.el10.src.rpm
+    evr: 2.40.2-15.el10_1
+    sourcerpm: util-linux-2.40.2-15.el10_1.src.rpm
   source:
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/source/SRPMS/Packages/a/apr-1.7.5-2.el10.src.rpm
     repoid: rhel-10-for-x86_64-appstream-source-rpms
@@ -2673,12 +2673,12 @@ arches:
     checksum: sha256:69cc68b0b5f1fbc3ddad56d47022addf1ed33496fa8090ca910184ee702a4165
     name: apr
     evr: 1.7.5-2.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/source/SRPMS/Packages/a/apr-util-1.6.3-21.el10.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/source/SRPMS/Packages/a/apr-util-1.6.3-23.el10_1.src.rpm
     repoid: rhel-10-for-x86_64-appstream-source-rpms
-    size: 500668
-    checksum: sha256:b5f0033f8f0e93e9d1db8a770e68ba51fec223ad3aed06cc432453147bbf8784
+    size: 503600
+    checksum: sha256:5f6e361a4a7398d9eab3c2346cfe45856b50edff301daa537680bcc4b2c09edf
     name: apr-util
-    evr: 1.6.3-21.el10
+    evr: 1.6.3-23.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/source/SRPMS/Packages/c/container-selinux-2.240.0-1.el10.src.rpm
     repoid: rhel-10-for-x86_64-appstream-source-rpms
     size: 47301
@@ -3033,12 +3033,12 @@ arches:
     checksum: sha256:fbb507a42a8edb9d0d0cbc7ec394d1fe7bb7c2f0456b98ce4fb5fa20036b3cbc
     name: gdbm
     evr: 1:1.23-12.el10_0
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/g/glibc-2.39-58.el10_1.2.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/g/glibc-2.39-58.el10_1.7.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
-    size: 19960777
-    checksum: sha256:4cf3f1c3538487fe0ef23fd92d00d1fd169541cdd8855df4ae1a734a387b15c4
+    size: 20318950
+    checksum: sha256:a3719e5564a944ca286a359f7fc20e7befb5912fe4b3179d1aa0fd5f07bf1240
     name: glibc
-    evr: 2.39-58.el10_1.2
+    evr: 2.39-58.el10_1.7
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/g/groff-1.23.0-10.el10.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
     size: 7488146
@@ -3057,12 +3057,12 @@ arches:
     checksum: sha256:5715b494471c7d28ee7dbac67ea1b1fdb6ab711e032dab9b2a062ee9c330de20
     name: jansson
     evr: 2.14-3.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.28.1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.31.1.el10_1.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
-    size: 156167588
-    checksum: sha256:57e922550086a803394004f9e4c2e8e49850f686317d8eae935565a8f6b42ebf
+    size: 156192285
+    checksum: sha256:78c6c5baa4cd37ce07e24ac10705f90d30f062e224737fe9175978313c97dae5
     name: kernel
-    evr: 6.12.0-124.28.1.el10_1
+    evr: 6.12.0-124.31.1.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/k/kmod-31-12.el10.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
     size: 623740
@@ -3165,12 +3165,12 @@ arches:
     checksum: sha256:f79d5f073d8be108a59152f4d2327d0880abfae685482aeceff136b5be55de51
     name: openssh
     evr: 9.9p1-12.el10_1
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/o/openssl-3.5.1-5.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/o/openssl-3.5.1-7.el10_1.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
-    size: 53407310
-    checksum: sha256:0e731cae33a67c5134ebd35e5e2968ee131b0059149175a1bb029369fb32b545
+    size: 53462164
+    checksum: sha256:648b8cd38cd34ffd462cb490fa75729efa38f5d3e799918378d51679ce03c3bd
     name: openssl
-    evr: 1:3.5.1-5.el10_1
+    evr: 1:3.5.1-7.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/p/pam-1.6.1-8.el10.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
     size: 1237988
@@ -3213,10 +3213,10 @@ arches:
     checksum: sha256:619488f8b734592f49c1ecc17290463e4663a3710bb62bbd9533413f0bb94566
     name: systemd
     evr: 257-13.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/u/util-linux-2.40.2-13.el10.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/u/util-linux-2.40.2-15.el10_1.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
-    size: 9051869
-    checksum: sha256:ef2ce9b634a5c9d66aeda344e7ce1a6282677d278615d189f6388582962c90e0
+    size: 9062009
+    checksum: sha256:c39f769b8989c6b5e81d94300957144b12bb08cfd79842b282ecb2212d17138a
     name: util-linux
-    evr: 2.40.2-13.el10
+    evr: 2.40.2-15.el10_1
   module_metadata: []
