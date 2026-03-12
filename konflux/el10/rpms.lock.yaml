@@ -46,13 +46,13 @@ arches:
     name: cpp
     evr: 14.3.1-2.1.el10
     sourcerpm: gcc-14.3.1-2.1.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/d/delve-1.25.2-1.el10_1.ppc64le.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/d/delve-1.25.2-2.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 4518048
-    checksum: sha256:2814e2078f1b19896b28288284b9e377daba9428ec98611673e83b7786f35094
+    size: 4582948
+    checksum: sha256:21d6da47f65a2cde3f797c9e4e93595b36abda3d79bd860e303064ee62406343
     name: delve
-    evr: 1.25.2-1.el10_1
-    sourcerpm: delve-1.25.2-1.el10_1.src.rpm
+    evr: 1.25.2-2.el10_1
+    sourcerpm: delve-1.25.2-2.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/gcc-14.3.1-2.1.el10.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
     size: 34234428
@@ -88,48 +88,48 @@ arches:
     name: glibc-devel
     evr: 2.39-58.el10_1.7
     sourcerpm: glibc-2.39-58.el10_1.7.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/go-toolset-1.25.5-1.el10_1.ppc64le.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/go-toolset-1.25.7-1.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 14393
-    checksum: sha256:97a8dc768cc7e5eab8decc424d3c3564c1526411492182ffe9d4bf4d8ab8dc00
+    size: 13389
+    checksum: sha256:d0647f96290660f3597e46608d2d03473a42b9113755ec14247037416c8760ea
     name: go-toolset
-    evr: 1.25.5-1.el10_1
-    sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/golang-1.25.5-1.el10_1.ppc64le.rpm
+    evr: 1.25.7-1.el10_1
+    sourcerpm: golang-1.25.7-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/golang-1.25.7-1.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 1313055
-    checksum: sha256:96b46753403512668c49947c7ffec0f7540ce0c72f904bf032e6f5ec57ec7cb1
+    size: 1311909
+    checksum: sha256:87fc8127696007ecd1099e25a90c1dc67649981ec97335591aaab3ed41ca6d46
     name: golang
-    evr: 1.25.5-1.el10_1
-    sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/golang-bin-1.25.5-1.el10_1.ppc64le.rpm
+    evr: 1.25.7-1.el10_1
+    sourcerpm: golang-1.25.7-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/golang-bin-1.25.7-1.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 35214581
-    checksum: sha256:78cf9349223fa6913c2d7c503bf9273a49cbe3046c13bfd7ff3a0465c6571993
+    size: 35217025
+    checksum: sha256:a33be98b8ddc1e46c787b8f951d7422704b557f5dbceb26e58f1b7d7ac7505eb
     name: golang-bin
-    evr: 1.25.5-1.el10_1
-    sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/golang-race-1.25.5-1.el10_1.ppc64le.rpm
+    evr: 1.25.7-1.el10_1
+    sourcerpm: golang-1.25.7-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/golang-race-1.25.7-1.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 1645141
-    checksum: sha256:9b3fc5acbdf4c1eca63a600f7c2a41e8cfaaccf5222b71182d5395f50adaccdf
+    size: 1644144
+    checksum: sha256:aabed8868a3c97ab0274b2b6df6ef75da2abfe8ee81f29bc47aa82b78c73a51f
     name: golang-race
-    evr: 1.25.5-1.el10_1
-    sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/golang-src-1.25.5-1.el10_1.noarch.rpm
+    evr: 1.25.7-1.el10_1
+    sourcerpm: golang-1.25.7-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/g/golang-src-1.25.7-1.el10_1.noarch.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 12176223
-    checksum: sha256:94ef7e521f4cf1ad2932e66d1ecf1f0d0e03db04ba18e440acb7204551bf4100
+    size: 12176839
+    checksum: sha256:6e9b0d4c7362e894863ffd22fd56d55826022d3d4adc2bd19e34dec608a61f2a
     name: golang-src
-    evr: 1.25.5-1.el10_1
-    sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/k/kernel-headers-6.12.0-124.31.1.el10_1.ppc64le.rpm
+    evr: 1.25.7-1.el10_1
+    sourcerpm: golang-1.25.7-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/k/kernel-headers-6.12.0-124.43.1.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
-    size: 3384857
-    checksum: sha256:fd9d866beaa74d8c092c4671974b719f1f8cbf524940b84410f06fc2791acc5c
+    size: 3394329
+    checksum: sha256:8487ccb2c7d14d2b125707918029309baf7841b3408eaf6abd21f1d897d277d4
     name: kernel-headers
-    evr: 6.12.0-124.31.1.el10_1
-    sourcerpm: kernel-6.12.0-124.31.1.el10_1.src.rpm
+    evr: 6.12.0-124.43.1.el10_1
+    sourcerpm: kernel-6.12.0-124.43.1.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/os/Packages/l/libasan-14.3.1-2.1.el10.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-appstream-rpms
     size: 553228
@@ -1019,20 +1019,20 @@ arches:
     name: rpm-plugin-selinux
     evr: 4.19.1.1-20.el10
     sourcerpm: rpm-4.19.1.1-20.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/s/selinux-policy-42.1.7-1.el10.noarch.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/s/selinux-policy-42.1.7-1.el10_1.1.noarch.rpm
     repoid: rhel-10-for-ppc64le-baseos-rpms
-    size: 50732
-    checksum: sha256:a19916d89c65f2ce51b8b04f362dd7cb0dcee4a5140397a91b5c743e5e2cf552
+    size: 57360
+    checksum: sha256:dc76f4fc633b0781ca81224031446a16ff272a0b226f32be9f8fca29d340ee82
     name: selinux-policy
-    evr: 42.1.7-1.el10
-    sourcerpm: selinux-policy-42.1.7-1.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/s/selinux-policy-targeted-42.1.7-1.el10.noarch.rpm
+    evr: 42.1.7-1.el10_1.1
+    sourcerpm: selinux-policy-42.1.7-1.el10_1.1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/s/selinux-policy-targeted-42.1.7-1.el10_1.1.noarch.rpm
     repoid: rhel-10-for-ppc64le-baseos-rpms
-    size: 6513838
-    checksum: sha256:9c58ce9a6a4e598e73087fd278d19c62779b30cb2822b9d58727856cd2386780
+    size: 6522071
+    checksum: sha256:13051e3cd49c5afd4dd18098c8f3c3b603171f696a4f13a815c5bafef0347476
     name: selinux-policy-targeted
-    evr: 42.1.7-1.el10
-    sourcerpm: selinux-policy-42.1.7-1.el10.src.rpm
+    evr: 42.1.7-1.el10_1.1
+    sourcerpm: selinux-policy-42.1.7-1.el10_1.1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/s/shadow-utils-4.15.0-8.el10.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-baseos-rpms
     size: 1432151
@@ -1087,24 +1087,24 @@ arches:
     checksum: sha256:7dc2c319efa41a953dc69301805759998016e00f3e9868b8100330f92ab241d7
     name: container-selinux
     evr: 4:2.240.0-1.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/source/SRPMS/Packages/d/delve-1.25.2-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/source/SRPMS/Packages/d/delve-1.25.2-2.el10_1.src.rpm
     repoid: rhel-10-for-ppc64le-appstream-source-rpms
-    size: 9744643
-    checksum: sha256:d8cdba225a05a62b3d7febf697ff6d988db67145c97737aeff6ff4faea591b8d
+    size: 9750121
+    checksum: sha256:01ca082ec9d42e74b026713b38a35fe51b8e3ff5e00ef011a820c6d3b4104938
     name: delve
-    evr: 1.25.2-1.el10_1
+    evr: 1.25.2-2.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/source/SRPMS/Packages/g/git-2.47.3-1.el10_0.src.rpm
     repoid: rhel-10-for-ppc64le-appstream-source-rpms
     size: 7742812
     checksum: sha256:5cc66640f15339e1e059aa3776f2228f2356b37d0977333fb8a5c1012d5e7ef9
     name: git
     evr: 2.47.3-1.el10_0
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/source/SRPMS/Packages/g/golang-1.25.5-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/source/SRPMS/Packages/g/golang-1.25.7-1.el10_1.src.rpm
     repoid: rhel-10-for-ppc64le-appstream-source-rpms
-    size: 34224658
-    checksum: sha256:3f2eb7f779f2c0b4d2b7b123fab0cffc053374fefd30384985d1ac9be1a6da29
+    size: 34226616
+    checksum: sha256:529f0fe4a873eedf66186c02e3a2660e78f8ebe649691649c238b71d1b92852e
     name: golang
-    evr: 1.25.5-1.el10_1
+    evr: 1.25.7-1.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/appstream/source/SRPMS/Packages/l/libmpc-1.3.1-7.el10.src.rpm
     repoid: rhel-10-for-ppc64le-appstream-source-rpms
     size: 796515
@@ -1459,12 +1459,12 @@ arches:
     checksum: sha256:5715b494471c7d28ee7dbac67ea1b1fdb6ab711e032dab9b2a062ee9c330de20
     name: jansson
     evr: 2.14-3.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.31.1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.43.1.el10_1.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
-    size: 156192285
-    checksum: sha256:78c6c5baa4cd37ce07e24ac10705f90d30f062e224737fe9175978313c97dae5
+    size: 156245363
+    checksum: sha256:482e341709a6f95ef4b30b0822bc439414b849b3f52c5c072012ef9c2b5b9b3d
     name: kernel
-    evr: 6.12.0-124.31.1.el10_1
+    evr: 6.12.0-124.43.1.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/k/kmod-31-12.el10.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
     size: 623740
@@ -1603,12 +1603,12 @@ arches:
     checksum: sha256:a8cdf3e3d9b992ddb71fb1bcf7572f7730309a14281eb0e5dcce522fbe601d9e
     name: rpm
     evr: 4.19.1.1-20.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/s/selinux-policy-42.1.7-1.el10.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/s/selinux-policy-42.1.7-1.el10_1.1.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
-    size: 1268058
-    checksum: sha256:e47499778166a6c88d2018cadf68d24340c7339289f52be3426272cba8f0a5f0
+    size: 1276119
+    checksum: sha256:a81e8cec003f637ce1fdc2575d84727e54d7725e9c343e3e4b4f303ae8e6c41d
     name: selinux-policy
-    evr: 42.1.7-1.el10
+    evr: 42.1.7-1.el10_1.1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/s/shadow-utils-4.15.0-8.el10.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
     size: 1913456
@@ -1672,13 +1672,13 @@ arches:
     name: cpp
     evr: 14.3.1-2.1.el10
     sourcerpm: gcc-14.3.1-2.1.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/d/delve-1.25.2-1.el10_1.x86_64.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/d/delve-1.25.2-2.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 5488878
-    checksum: sha256:218f5cfc64180fc25e5c4d244756739ae90161a96ba9ff89e2371c531a57d7e1
+    size: 5563202
+    checksum: sha256:c3212b9a0c337b87f09ffe91c8e779253891270461ee50f30c01b3901d3fb426
     name: delve
-    evr: 1.25.2-1.el10_1
-    sourcerpm: delve-1.25.2-1.el10_1.src.rpm
+    evr: 1.25.2-2.el10_1
+    sourcerpm: delve-1.25.2-2.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/gcc-14.3.1-2.1.el10.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
     size: 39857423
@@ -1714,48 +1714,48 @@ arches:
     name: glibc-devel
     evr: 2.39-58.el10_1.7
     sourcerpm: glibc-2.39-58.el10_1.7.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/go-toolset-1.25.5-1.el10_1.x86_64.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/go-toolset-1.25.7-1.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 14433
-    checksum: sha256:e3e7f73a6ae6a4bc89e698cae3ff11ef608c38fa4952364f4fb794092babf9b5
+    size: 13421
+    checksum: sha256:ecbb77545686df93974aee3381874b718b4633b59e0b0ff18da9ea9a60a1ad71
     name: go-toolset
-    evr: 1.25.5-1.el10_1
-    sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/golang-1.25.5-1.el10_1.x86_64.rpm
+    evr: 1.25.7-1.el10_1
+    sourcerpm: golang-1.25.7-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/golang-1.25.7-1.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 1313095
-    checksum: sha256:e50f256a872adf204b403bae22cf5eae4670d4183cdfe8985915d08fbf00be15
+    size: 1311941
+    checksum: sha256:23f233e97522bd3e25feaf2ab8b56b50df6818831f7c2c58887299f45213f6ab
     name: golang
-    evr: 1.25.5-1.el10_1
-    sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/golang-bin-1.25.5-1.el10_1.x86_64.rpm
+    evr: 1.25.7-1.el10_1
+    sourcerpm: golang-1.25.7-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/golang-bin-1.25.7-1.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 38325068
-    checksum: sha256:1c09952e04c71f77d043da41db4d2d96d58f7f6c6b87138e24b24f13c376d6e3
+    size: 38329681
+    checksum: sha256:8ddd0d033246d0aa5ba367959342f038f3301754ce9c95e8454c70bdf4b19ae4
     name: golang-bin
-    evr: 1.25.5-1.el10_1
-    sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/golang-race-1.25.5-1.el10_1.x86_64.rpm
+    evr: 1.25.7-1.el10_1
+    sourcerpm: golang-1.25.7-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/golang-race-1.25.7-1.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 1716369
-    checksum: sha256:847143611a659b845e89eff083f648356a37b96cc04bd007c3c700d55afedc43
+    size: 1715335
+    checksum: sha256:c7eae597f6d8535b02b6022da9dab7a6e1fdc9f4ecea37c4518762c792d1992f
     name: golang-race
-    evr: 1.25.5-1.el10_1
-    sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/golang-src-1.25.5-1.el10_1.noarch.rpm
+    evr: 1.25.7-1.el10_1
+    sourcerpm: golang-1.25.7-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/g/golang-src-1.25.7-1.el10_1.noarch.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 12176223
-    checksum: sha256:94ef7e521f4cf1ad2932e66d1ecf1f0d0e03db04ba18e440acb7204551bf4100
+    size: 12176839
+    checksum: sha256:6e9b0d4c7362e894863ffd22fd56d55826022d3d4adc2bd19e34dec608a61f2a
     name: golang-src
-    evr: 1.25.5-1.el10_1
-    sourcerpm: golang-1.25.5-1.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/k/kernel-headers-6.12.0-124.31.1.el10_1.x86_64.rpm
+    evr: 1.25.7-1.el10_1
+    sourcerpm: golang-1.25.7-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/k/kernel-headers-6.12.0-124.43.1.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
-    size: 3405209
-    checksum: sha256:4090f751bcc18493dc2ff35f09a47ef44e06bdae69d5208a1b7a7881ec6c3c41
+    size: 3414681
+    checksum: sha256:2d29eead3ba308c8bec86f0e41a0d76602b50494aa6634243cd327e02fbc1e47
     name: kernel-headers
-    evr: 6.12.0-124.31.1.el10_1
-    sourcerpm: kernel-6.12.0-124.31.1.el10_1.src.rpm
+    evr: 6.12.0-124.43.1.el10_1
+    sourcerpm: kernel-6.12.0-124.43.1.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/os/Packages/l/libmpc-1.3.1-7.el10.x86_64.rpm
     repoid: rhel-10-for-x86_64-appstream-rpms
     size: 75330
@@ -2617,20 +2617,20 @@ arches:
     name: rpm-plugin-selinux
     evr: 4.19.1.1-20.el10
     sourcerpm: rpm-4.19.1.1-20.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/s/selinux-policy-42.1.7-1.el10.noarch.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/s/selinux-policy-42.1.7-1.el10_1.1.noarch.rpm
     repoid: rhel-10-for-x86_64-baseos-rpms
-    size: 50732
-    checksum: sha256:a19916d89c65f2ce51b8b04f362dd7cb0dcee4a5140397a91b5c743e5e2cf552
+    size: 57360
+    checksum: sha256:dc76f4fc633b0781ca81224031446a16ff272a0b226f32be9f8fca29d340ee82
     name: selinux-policy
-    evr: 42.1.7-1.el10
-    sourcerpm: selinux-policy-42.1.7-1.el10.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/s/selinux-policy-targeted-42.1.7-1.el10.noarch.rpm
+    evr: 42.1.7-1.el10_1.1
+    sourcerpm: selinux-policy-42.1.7-1.el10_1.1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/s/selinux-policy-targeted-42.1.7-1.el10_1.1.noarch.rpm
     repoid: rhel-10-for-x86_64-baseos-rpms
-    size: 6513838
-    checksum: sha256:9c58ce9a6a4e598e73087fd278d19c62779b30cb2822b9d58727856cd2386780
+    size: 6522071
+    checksum: sha256:13051e3cd49c5afd4dd18098c8f3c3b603171f696a4f13a815c5bafef0347476
     name: selinux-policy-targeted
-    evr: 42.1.7-1.el10
-    sourcerpm: selinux-policy-42.1.7-1.el10.src.rpm
+    evr: 42.1.7-1.el10_1.1
+    sourcerpm: selinux-policy-42.1.7-1.el10_1.1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/s/shadow-utils-4.15.0-8.el10.x86_64.rpm
     repoid: rhel-10-for-x86_64-baseos-rpms
     size: 1411048
@@ -2685,24 +2685,24 @@ arches:
     checksum: sha256:7dc2c319efa41a953dc69301805759998016e00f3e9868b8100330f92ab241d7
     name: container-selinux
     evr: 4:2.240.0-1.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/source/SRPMS/Packages/d/delve-1.25.2-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/source/SRPMS/Packages/d/delve-1.25.2-2.el10_1.src.rpm
     repoid: rhel-10-for-x86_64-appstream-source-rpms
-    size: 9744643
-    checksum: sha256:d8cdba225a05a62b3d7febf697ff6d988db67145c97737aeff6ff4faea591b8d
+    size: 9750121
+    checksum: sha256:01ca082ec9d42e74b026713b38a35fe51b8e3ff5e00ef011a820c6d3b4104938
     name: delve
-    evr: 1.25.2-1.el10_1
+    evr: 1.25.2-2.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/source/SRPMS/Packages/g/git-2.47.3-1.el10_0.src.rpm
     repoid: rhel-10-for-x86_64-appstream-source-rpms
     size: 7742812
     checksum: sha256:5cc66640f15339e1e059aa3776f2228f2356b37d0977333fb8a5c1012d5e7ef9
     name: git
     evr: 2.47.3-1.el10_0
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/source/SRPMS/Packages/g/golang-1.25.5-1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/source/SRPMS/Packages/g/golang-1.25.7-1.el10_1.src.rpm
     repoid: rhel-10-for-x86_64-appstream-source-rpms
-    size: 34224658
-    checksum: sha256:3f2eb7f779f2c0b4d2b7b123fab0cffc053374fefd30384985d1ac9be1a6da29
+    size: 34226616
+    checksum: sha256:529f0fe4a873eedf66186c02e3a2660e78f8ebe649691649c238b71d1b92852e
     name: golang
-    evr: 1.25.5-1.el10_1
+    evr: 1.25.7-1.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/appstream/source/SRPMS/Packages/l/libmpc-1.3.1-7.el10.src.rpm
     repoid: rhel-10-for-x86_64-appstream-source-rpms
     size: 796515
@@ -3057,12 +3057,12 @@ arches:
     checksum: sha256:5715b494471c7d28ee7dbac67ea1b1fdb6ab711e032dab9b2a062ee9c330de20
     name: jansson
     evr: 2.14-3.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.31.1.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/k/kernel-6.12.0-124.43.1.el10_1.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
-    size: 156192285
-    checksum: sha256:78c6c5baa4cd37ce07e24ac10705f90d30f062e224737fe9175978313c97dae5
+    size: 156245363
+    checksum: sha256:482e341709a6f95ef4b30b0822bc439414b849b3f52c5c072012ef9c2b5b9b3d
     name: kernel
-    evr: 6.12.0-124.31.1.el10_1
+    evr: 6.12.0-124.43.1.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/k/kmod-31-12.el10.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
     size: 623740
@@ -3195,12 +3195,12 @@ arches:
     checksum: sha256:a8cdf3e3d9b992ddb71fb1bcf7572f7730309a14281eb0e5dcce522fbe601d9e
     name: rpm
     evr: 4.19.1.1-20.el10
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/s/selinux-policy-42.1.7-1.el10.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/s/selinux-policy-42.1.7-1.el10_1.1.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
-    size: 1268058
-    checksum: sha256:e47499778166a6c88d2018cadf68d24340c7339289f52be3426272cba8f0a5f0
+    size: 1276119
+    checksum: sha256:a81e8cec003f637ce1fdc2575d84727e54d7725e9c343e3e4b4f303ae8e6c41d
     name: selinux-policy
-    evr: 42.1.7-1.el10
+    evr: 42.1.7-1.el10_1.1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/s/shadow-utils-4.15.0-8.el10.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
     size: 1913456
