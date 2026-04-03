@@ -963,20 +963,20 @@ arches:
     name: ncurses
     evr: 6.4-15.20240127.el10_1
     sourcerpm: ncurses-6.4-15.20240127.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/o/openssh-9.9p1-12.el10_1.ppc64le.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/o/openssh-9.9p1-13.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-baseos-rpms
-    size: 371304
-    checksum: sha256:ddb3e91d203c2a17fa41329cfd3f65c1795688f8230bb85b62bd9b31682f5328
+    size: 377836
+    checksum: sha256:15fa87241a495ec3d9167d87fdba298f1f446f7a2ce51647d150b237130a0569
     name: openssh
-    evr: 9.9p1-12.el10_1
-    sourcerpm: openssh-9.9p1-12.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/o/openssh-clients-9.9p1-12.el10_1.ppc64le.rpm
+    evr: 9.9p1-13.el10_1
+    sourcerpm: openssh-9.9p1-13.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/o/openssh-clients-9.9p1-13.el10_1.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-baseos-rpms
-    size: 812945
-    checksum: sha256:6c57e9d25d3f88727daae390ad59f4dd2bb681c55843d7998dd67dd09bb2efff
+    size: 819502
+    checksum: sha256:78d7288590a03ec768f8cdb0186ccb67f64eff55a916d82b7e2f6556222b982e
     name: openssh-clients
-    evr: 9.9p1-12.el10_1
-    sourcerpm: openssh-9.9p1-12.el10_1.src.rpm
+    evr: 9.9p1-13.el10_1
+    sourcerpm: openssh-9.9p1-13.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/os/Packages/p/pam-1.6.1-8.el10.ppc64le.rpm
     repoid: rhel-10-for-ppc64le-baseos-rpms
     size: 636230
@@ -1567,12 +1567,12 @@ arches:
     checksum: sha256:f31cd79c6f005f85f0fdbdac5025c1ccc2b2b9c88103fd8ca94fc523c8c4c6ec
     name: ncurses
     evr: 6.4-15.20240127.el10_1
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/o/openssh-9.9p1-12.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/o/openssh-9.9p1-13.el10_1.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
-    size: 2352864
-    checksum: sha256:f79d5f073d8be108a59152f4d2327d0880abfae685482aeceff136b5be55de51
+    size: 2359937
+    checksum: sha256:5f3f0295c946398886b966281a49bb16088a1a5dd52a6b6deff4a35d693c154d
     name: openssh
-    evr: 9.9p1-12.el10_1
+    evr: 9.9p1-13.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/ppc64le/baseos/source/SRPMS/Packages/o/openssl-3.5.1-7.el10_1.src.rpm
     repoid: rhel-10-for-ppc64le-baseos-source-rpms
     size: 53462164
@@ -2561,20 +2561,20 @@ arches:
     name: ncurses
     evr: 6.4-15.20240127.el10_1
     sourcerpm: ncurses-6.4-15.20240127.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/o/openssh-9.9p1-12.el10_1.x86_64.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/o/openssh-9.9p1-13.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-baseos-rpms
-    size: 359221
-    checksum: sha256:b216643e62a1c55d33e8beb94a9db7a40377121b76f45ef7deb91930dc5ffd0f
+    size: 366211
+    checksum: sha256:8f45d26386e0476f6b58a9cdd2adceb7e8f2fb04b6c157fc378f39d5d8bd6fc2
     name: openssh
-    evr: 9.9p1-12.el10_1
-    sourcerpm: openssh-9.9p1-12.el10_1.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/o/openssh-clients-9.9p1-12.el10_1.x86_64.rpm
+    evr: 9.9p1-13.el10_1
+    sourcerpm: openssh-9.9p1-13.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/o/openssh-clients-9.9p1-13.el10_1.x86_64.rpm
     repoid: rhel-10-for-x86_64-baseos-rpms
-    size: 779690
-    checksum: sha256:693bce2d3cc006c704a5795eec86a826e794647a48ad079338dbcb96ac2bcb9d
+    size: 786466
+    checksum: sha256:4ff276d910b8ce01f15ecf58ccb28e82feb6759dda10afb1d2a195c9b019d08e
     name: openssh-clients
-    evr: 9.9p1-12.el10_1
-    sourcerpm: openssh-9.9p1-12.el10_1.src.rpm
+    evr: 9.9p1-13.el10_1
+    sourcerpm: openssh-9.9p1-13.el10_1.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/os/Packages/p/pam-1.6.1-8.el10.x86_64.rpm
     repoid: rhel-10-for-x86_64-baseos-rpms
     size: 599726
@@ -3159,12 +3159,12 @@ arches:
     checksum: sha256:f31cd79c6f005f85f0fdbdac5025c1ccc2b2b9c88103fd8ca94fc523c8c4c6ec
     name: ncurses
     evr: 6.4-15.20240127.el10_1
-  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/o/openssh-9.9p1-12.el10_1.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/o/openssh-9.9p1-13.el10_1.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
-    size: 2352864
-    checksum: sha256:f79d5f073d8be108a59152f4d2327d0880abfae685482aeceff136b5be55de51
+    size: 2359937
+    checksum: sha256:5f3f0295c946398886b966281a49bb16088a1a5dd52a6b6deff4a35d693c154d
     name: openssh
-    evr: 9.9p1-12.el10_1
+    evr: 9.9p1-13.el10_1
   - url: https://cdn.redhat.com/content/dist/rhel10/10/x86_64/baseos/source/SRPMS/Packages/o/openssl-3.5.1-7.el10_1.src.rpm
     repoid: rhel-10-for-x86_64-baseos-source-rpms
     size: 53462164
