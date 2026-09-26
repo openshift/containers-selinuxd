@@ -81,13 +81,13 @@ arches:
     name: golang-src
     evr: 1.26.7-2.el9_8
     sourcerpm: golang-1.26.7-2.el9_8.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/appstream/os/Packages/k/kernel-headers-5.14.0-687.51.1.el9_8.ppc64le.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/appstream/os/Packages/k/kernel-headers-5.14.0-687.52.1.el9_8.ppc64le.rpm
     repoid: rhel-9-for-ppc64le-appstream-rpms
-    size: 2943909
-    checksum: sha256:9f76ca5204046390a8514054f77cd2a2039c46853001e026faece81ec574e6b2
+    size: 2940597
+    checksum: sha256:8dff161bb85c25e90d5540b565952a0abedb0cab3b926da46e3ba15806677490
     name: kernel-headers
-    evr: 5.14.0-687.51.1.el9_8
-    sourcerpm: kernel-5.14.0-687.51.1.el9_8.src.rpm
+    evr: 5.14.0-687.52.1.el9_8
+    sourcerpm: kernel-5.14.0-687.52.1.el9_8.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/appstream/os/Packages/l/libasan-11.5.0-14.el9.ppc64le.rpm
     repoid: rhel-9-for-ppc64le-appstream-rpms
     size: 440756
@@ -556,12 +556,12 @@ arches:
     checksum: sha256:f28fcbe8f3de2ec7dcdb51b1f51f03f61d0afa18c9fef10d210f40ff0c71f3a0
     name: gzip
     evr: 1.12-2.el9_8
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/baseos/source/SRPMS/Packages/k/kernel-5.14.0-687.51.1.el9_8.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/baseos/source/SRPMS/Packages/k/kernel-5.14.0-687.52.1.el9_8.src.rpm
     repoid: rhel-9-for-ppc64le-baseos-source-rpms
-    size: 152514546
-    checksum: sha256:8be0fa79021d83ee41c561a6b1388fff2adf4809c353ee647d608fbb73f62d32
+    size: 152521141
+    checksum: sha256:4b1634381a2ca00b3d30051c32db665b5b5ea9440641e06c93f855105846e306
     name: kernel
-    evr: 5.14.0-687.51.1.el9_8
+    evr: 5.14.0-687.52.1.el9_8
   - url: https://cdn.redhat.com/content/dist/rhel9/9/ppc64le/baseos/source/SRPMS/Packages/k/kmod-28-11.el9.src.rpm
     repoid: rhel-9-for-ppc64le-baseos-source-rpms
     size: 579198
@@ -787,13 +787,13 @@ arches:
     name: golang-src
     evr: 1.26.7-2.el9_8
     sourcerpm: golang-1.26.7-2.el9_8.src.rpm
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/appstream/os/Packages/k/kernel-headers-5.14.0-687.51.1.el9_8.x86_64.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/appstream/os/Packages/k/kernel-headers-5.14.0-687.52.1.el9_8.x86_64.rpm
     repoid: rhel-9-for-x86_64-appstream-rpms
-    size: 2959397
-    checksum: sha256:bf3a6de0e2eab861051d6a8903b465145c2e2888a458c8f1008c5589f8aa3f58
+    size: 2956089
+    checksum: sha256:97fdbd1cd14ee0a1f5818edc96e0c3e0f1ebfcaacdd7c63f33d2b791ea177f94
     name: kernel-headers
-    evr: 5.14.0-687.51.1.el9_8
-    sourcerpm: kernel-5.14.0-687.51.1.el9_8.src.rpm
+    evr: 5.14.0-687.52.1.el9_8
+    sourcerpm: kernel-5.14.0-687.52.1.el9_8.src.rpm
   - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/appstream/os/Packages/l/libmpc-1.2.1-4.el9.x86_64.rpm
     repoid: rhel-9-for-x86_64-appstream-rpms
     size: 66075
@@ -1234,12 +1234,12 @@ arches:
     checksum: sha256:f28fcbe8f3de2ec7dcdb51b1f51f03f61d0afa18c9fef10d210f40ff0c71f3a0
     name: gzip
     evr: 1.12-2.el9_8
-  - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/baseos/source/SRPMS/Packages/k/kernel-5.14.0-687.51.1.el9_8.src.rpm
+  - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/baseos/source/SRPMS/Packages/k/kernel-5.14.0-687.52.1.el9_8.src.rpm
     repoid: rhel-9-for-x86_64-baseos-source-rpms
-    size: 152514546
-    checksum: sha256:8be0fa79021d83ee41c561a6b1388fff2adf4809c353ee647d608fbb73f62d32
+    size: 152521141
+    checksum: sha256:4b1634381a2ca00b3d30051c32db665b5b5ea9440641e06c93f855105846e306
     name: kernel
-    evr: 5.14.0-687.51.1.el9_8
+    evr: 5.14.0-687.52.1.el9_8
   - url: https://cdn.redhat.com/content/dist/rhel9/9/x86_64/baseos/source/SRPMS/Packages/k/kmod-28-11.el9.src.rpm
     repoid: rhel-9-for-x86_64-baseos-source-rpms
     size: 579198
